@@ -1,0 +1,38 @@
+---
+title: "Fee Structure"
+---
+
+How fees and epoch rewards are distributed on 40 Acres.
+
+## Origination Fee
+
+A flat **0.8%** fee is charged when you open a credit line. This is a one-time cost applied at loan origination. There are no recurring fees, no interest, and no penalties for early repayment.
+
+## Epoch Reward Split
+
+Each epoch, rewards earned by your deposited veNFT are automatically split as follows:
+
+| Recipient | Share | Description |
+| --- | --- | --- |
+| Borrower (loan repayment) | 75% | Applied directly to your outstanding loan balance |
+| Lenders (vault yield) | 20% | Distributed proportionally to USDC vault depositors |
+| Protocol treasury | 5% | Supports ongoing development and operations |
+
+## Dynamic Fees (Coming Soon)
+
+The current flat 20% lender premium will transition to a **utilization-based dynamic fee model**. Under this system, the lender premium adjusts in real time based on vault utilization:
+
+- **Low utilization** → lower lender premium, borrowers keep more rewards
+- **High utilization** → higher lender premium, attracting new USDC deposits
+
+This creates a self-balancing vault. Capital is priced based on actual demand. When liquidity is stressed, the fee structure automatically incentivizes new deposits without any manual intervention.
+
+The flat 20% model cannot produce this response. Dynamic fees replace static pricing with a market-driven mechanism that benefits both sides of the lending market.
+
+## Relayer Fee
+
+If you use a Relayer for automated reward management, a **1% fee on rewards** is charged by the relayer operator.
+
+## Zero Balance Fee
+
+When a veNFT's loan balance reaches zero and the protocol claims the NFT on your behalf (a "zero balance claim"), a **1% premium** is applied. This compensates for the gas and infrastructure cost of the automated claim.

@@ -1,0 +1,57 @@
+---
+title: "How it works"
+---
+
+The mechanics behind self-repaying loans on 40 Acres.
+
+## The Core Mechanic
+
+Think of your veNFT as a revenue-generating business. Every week, it earns fees and bribes from the DEX it votes on. 40 Acres lets you borrow against that future revenue today, and automatically uses each week's earnings to pay down your debt.
+
+The simplest mental model: **your rewards are your repayment schedule**.
+
+## Step by Step
+
+<Steps>
+  <Step title="Deposit your veNFT">
+    Connect your wallet, select a veNFT, and deposit it as collateral. Ownership is transferred to the 40 Acres smart contract for the duration of the loan, but the asset remains yours; it can never be liquidated or sold.
+  </Step>
+  <Step title="Borrow USDC">
+    Your maximum loan amount is calculated based on your veNFT's average weekly rewards multiplied by the epoch multiplier (currently 10 epochs). You receive USDC instantly from the lending vault.
+  </Step>
+  <Step title="40 Acres votes on your behalf">
+    Your deposited veNFT is put to work immediately. The 40 Acres vote optimizer allocates your veNFT's voting power to the highest-yielding pools each epoch. You can also vote manually if you prefer; as long as you vote on supported pools.
+  </Step>
+  <Step title="Rewards repay your loan">
+    Each week at epoch flip, rewards flow in and are automatically applied to your loan balance. 75% goes toward repayment. 20% goes to lenders. 5% goes to the protocol treasury.
+  </Step>
+  <Step title="Reclaim your collateral">
+    Once the loan is fully repaid, your veNFT is returned to your wallet. No penalty. No extra cost. No deadline.
+  </Step>
+</Steps>
+
+## Loan Sizing
+
+Your borrow limit is calculated at origination:
+
+```text
+Max Borrow = locked_amount × rewards_rate × epoch_multiplier
+```
+
+| Variable | Description |
+| --- | --- |
+| `locked_amount` | Size of the veNFT lock |
+| `rewards_rate` | Average weekly rewards per unit of locked token (recalculated each epoch) |
+| `epoch_multiplier` | Currently 10 — the number of epochs you can borrow against |
+
+The epoch multiplier will increase incrementally as the protocol grows and TVL deepens.
+
+## What Happens If Rewards Underperform?
+
+If your veNFT generates less than expected in a given epoch, repayment simply takes longer. There is no liquidation. No forced close. The loan remains open and continues being repaid by whatever rewards flow in.
+
+You're betting on your future rewards. If rewards are strong, you repay faster. If they're weaker, it takes more time. Either way, your collateral is safe.
+
+## What Happens If Vault Utilization Is Full?
+
+New loans cannot be opened if vault utilization exceeds 80%. This protects lenders from overextension. Existing loans continue normally; repayments flow in and reduce utilization over time, reopening capacity for new borrowers.
