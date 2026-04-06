@@ -86,8 +86,15 @@
         "pages": [
           "home-page",
           "how-it-works",
-          "untitled-page",
-          "fee-structure"
+          "borrowing",
+          "fee-structure",
+          "voting",
+          "lending",
+          "relayera",
+          "portfolio-accounts",
+          "marketplace",
+          "security",
+          "faq"
         ]
       }
     ]

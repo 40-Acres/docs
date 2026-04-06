@@ -1,0 +1,45 @@
+---
+title: "Lending"
+---
+
+Deposit USDC and earn organic yield from 40 Acres borrower rewards.
+
+# Earn
+
+## How Lending Works
+
+40 Acres uses a peer-to-pool lending model. Lenders deposit USDC into the vault. That USDC is used to fund borrower loans. Each epoch, borrowers' veNFT rewards are collected and distributed back to lenders as yield.
+
+This is **real yield** sourced from DEX trading fees and bribes, not token emissions. Your return is a function of how well the underlying DEX ecosystem performs, not a protocol subsidy.
+
+## Depositing
+
+1. Navigate to the Earn dashboard
+2. Select the vault you want to deposit into (Base, Optimism, or Avalanche)
+3. Enter your USDC amount and confirm the transaction
+4. You begin earning yield immediately after your deposit is confirmed
+
+Vault shares are ERC4626 compliant. Your position is represented by vault tokens redeemable for your pro-rata share of vault assets plus accrued yield.
+
+## Yield Distribution
+
+Yield is distributed continuously over the course of each 7-day epoch, based on the previous epoch's voting rewards. As utilization rises and falls, your yield share adjusts accordingly (with dynamic fees enabled).
+
+Current APY range: **5–20%** depending on vault utilization and DEX epoch performance.
+
+## Withdrawing
+
+You can request a withdrawal at any time from the Earn dashboard. Withdrawals are subject to available liquidity. The protocol maintains an **80% utilization cap**, meaning at least 20% of vault funds must remain available for withdrawals.
+
+If a vault is fully utilized, you will need to wait for repayments to free up liquidity before withdrawing. The dashboard shows current available liquidity in real time.
+
+## Risk Considerations
+
+- **Smart contract risk**: All DeFi carries contract risk. 40 Acres contracts have been audited four times by Sherlock.
+- **Reward variability**: Yields are tied to epoch performance. A weak epoch means less yield that week.
+- **Utilization risk**: At 100% utilization, withdrawals are temporarily paused until repayments free up liquidity.
+- **Underlying protocol risk**: If a supported DEX (e.g. Aerodrome) were to stop generating fees, loans backed by those veNFTs could become slow to repay. The 80% utilization buffer provides a buffer against this scenario.
+
+40 Acres does not guarantee yields. Past performance does not predict future returns.
+
+→ [Read the full risk disclosure](/security/risks)

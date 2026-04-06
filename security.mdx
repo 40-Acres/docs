@@ -1,0 +1,67 @@
+---
+title: "Audits & Security"
+---
+
+40 Acres smart contract security reviews and deployed addresses.
+
+## Sherlock Audits
+
+40 Acres has completed four independent security reviews with Sherlock, one of DeFi's leading audit platforms.
+
+| Audit | Report |
+| --- | --- |
+| Sherlock Audit #4 (Most Recent) | [View Report](https://drive.google.com/file/d/1c68Rah-fQzLzaESx7qX_Lbk9ecZ6fHWM/view) |
+| Sherlock Audit #3 | [View Report](https://drive.google.com/file/d/1u9A628xAWbkZwC38iR2HW-CtRVPfpbPr/view) |
+| Sherlock Audit #2 | [View Report](https://drive.google.com/file/d/1Vi7osCQmVKXENdyly670g-837ms7L6cv/view) |
+| Sherlock Audit #1 | [View Report](https://drive.google.com/file/d/1JnTDL9HknriukWSs8sZPSlOGfh6_rFY6/view) |
+
+Lead auditors: [eeyore](https://audits.sherlock.xyz/watson/eeyore), [0xadrii](https://audits.sherlock.xyz/watson/0xadrii), [oot2k](https://audits.sherlock.xyz/watson/oot2k)
+
+## Deployed Contracts
+
+### Base
+
+| Contract | Address |
+| --- | --- |
+| Loan | [0x87f18b377e625b62c708D5f6EA96EC193558EFD0](https://basescan.org/address/0x87f18b377e625b62c708D5f6EA96EC193558EFD0) |
+| Vault | [0xB99B6dF96d4d5448cC0a5B3e0ef7896df9507Cf5](https://basescan.org/address/0xB99B6dDF96d4d5448cC0a5B3e0ef7896df9507Cf5) |
+
+### Optimism
+
+| Contract | Address |
+| --- | --- |
+| Loan | [0xf132bD888897254521D13e2c401e109caABa06A7](https://optimistic.etherscan.io/address/0xf132bD888897254521D13e2c401e109caABa06A7) |
+| Vault | [0x08dCDBf7baDe91Ccd42CB2a4EA8e5D199d285957](https://optimistic.etherscan.io/address/0x08dCDBf7baDe91Ccd42CB2a4EA8e5D199d285957) |
+
+### Avalanche (Pharaoh)
+
+| Contract | Address |
+| --- | --- |
+| Loan | [0x6Bf2Fe80D245b06f6900848ec52544FBdE6c8d2C](https://snowscan.xyz/address/0x6Bf2Fe80D245b06f6900848ec52544FBdE6c8d2C) |
+| Vault | [0x124D00b1ce4453Ffc5a5F65cE83aF13A7709baC7](https://snowtrace.io/address/0x124D00b1ce4453Ffc5a5F65cE83aF13A7709baC7) |
+| Portfolio Factory | [0x52d43C377e498980135C8F2E858f120A18Ea96C2](https://snowtrace.io/address/0x52d43C377e498980135C8F2E858f120A18Ea96C2) |
+
+### Avalanche (Blackhole)
+
+| Contract | Address |
+| --- | --- |
+| Loan | [0x5122f5154DF20E5F29df53E633cE1ac5b6623558](https://snowtrace.io/address/0x5122f5154DF20E5F29df53E633cE1ac5b6623558) |
+| Vault | [0xC0485C4bafB594Ae1457820fb6e5B67e8A04BCFD](https://snowtrace.io/address/0xC0485C4bafB594Ae1457820fb6e5B67e8A04BCFD) |
+
+## Protocol Parameters
+
+| Parameter | Description | Current Value |
+| --- | --- | --- |
+| Epoch Multiplier | Number of epochs borrowed against | 10 |
+| Lender Premium | % of rewards to vault | 20% |
+| Protocol Fee | % of rewards to treasury | 5% |
+| Zero Balance Fee | Fee for automated zero-balance claims | 1% |
+| Vault Utilization Cap | Max USDC utilization before new loans pause | 80% |
+
+## Risk Disclosure
+
+40 Acres is experimental software. Use it at your own risk.
+
+Key risks include: smart contract bugs despite audits, underlying DEX failure, reward variability reducing repayment pace, USDC depeg, and concentrated DEX exposure. The 80% utilization cap and multi-DEX expansion are the primary risk management mechanisms.
+
+→ [Full Risk Disclosure](/security/risks)
