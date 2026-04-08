@@ -1,7 +1,7 @@
 {"$schema":"https://mintlify.com/docs.json","theme":"mint","name":"40 Acres Finance","colors":{"primary":"#16A34A","light":"#07C983","dark":"#15803D"},"favicon":"/favicon.svg","navigation":{
     "tabs": [
       {
-        "tab": "Start Here",
+        "tab": "Home",
         "icon": "wheat",
         "groups": [
           {
@@ -134,10 +134,11 @@
         ]
       },
       {
-        "tab": "Contracts",
+        "tab": "Contracts List",
+        "icon": "file-doc",
         "groups": [
           {
-            "group": "Contracts List",
+            "group": "Get Started",
             "pages": []
           }
         ]
