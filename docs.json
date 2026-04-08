@@ -48,7 +48,7 @@
         ]
       },
       {
-        "tab": "API ",
+        "tab": "API Resource",
         "groups": [
           {
             "group": "API Documentation",
@@ -128,6 +128,15 @@
             "pages": [
               "api-reference/endpoint/user-recap"
             ]
+          }
+        ]
+      },
+      {
+        "tab": "Contracts",
+        "groups": [
+          {
+            "group": "Contracts List",
+            "pages": []
           }
         ]
       }
