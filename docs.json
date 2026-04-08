@@ -1,1 +1,135 @@
-{"$schema":"https://mintlify.com/docs.json","theme":"mint","name":"40 Acres Finance","colors":{"primary":"#16A34A","light":"#07C983","dark":"#15803D"},"favicon":"/favicon.svg","navigation":{"tabs":[{"tab":"40 Acres Finance","groups":[{"group":"Get Started","pages":["home-page","how-it-works"]},{"group":"Borrow","pages":["borrowing","fee-structure","voting"]},{"group":"Earn","pages":["lending"]},{"group":"Automate","pages":["relayera"]},{"group":"Features","pages":["portfolio-accounts","marketplace"]},{"group":"Resources","pages":["security","faq","tutorials"]}]},{"tab":"API Reference","groups":[{"group":"API Documentation","pages":["api-reference/introduction"]},{"group":"Rewards","pages":["api-reference/endpoint/get","api-reference/endpoint/full-epoch-rewards","api-reference/endpoint/historical-rewards","api-reference/endpoint/weekly-summary","api-reference/endpoint/top-reward-earners"]},{"group":"Voting","pages":["api-reference/endpoint/create","api-reference/endpoint/current-vote","api-reference/endpoint/vote-status","api-reference/endpoint/average-voting-apr","api-reference/endpoint/voting-apr-by-pool"]},{"group":"Lending","pages":["api-reference/endpoint/delete","api-reference/endpoint/loan-history","api-reference/endpoint/historical-borrows"]},{"group":"Leaderboard","pages":["api-reference/endpoint/webhook","api-reference/endpoint/all-time-leaderboard"]},{"group":"Prices","pages":["api-reference/endpoint/underlying-prices","api-reference/endpoint/velo-aero-prices"]},{"group":"Vaults","pages":["api-reference/endpoint/vault-info","api-reference/endpoint/user-vault-details"]},{"group":"veNFT","pages":["api-reference/endpoint/venft-list","api-reference/endpoint/ve-balance"]},{"group":"Incentives","pages":["api-reference/endpoint/op-incentives"]},{"group":"Statistics","pages":["api-reference/endpoint/protocol-stats"]},{"group":"User","pages":["api-reference/endpoint/user-recap"]}]}]}}
+{"$schema":"https://mintlify.com/docs.json","theme":"mint","name":"40 Acres Finance","colors":{"primary":"#16A34A","light":"#07C983","dark":"#15803D"},"favicon":"/favicon.svg","navigation":{
+    "tabs": [
+      {
+        "tab": "40 Acres Finance",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "home-page",
+              "how-it-works"
+            ]
+          },
+          {
+            "group": "Borrow",
+            "pages": [
+              "borrowing",
+              "fee-structure",
+              "voting"
+            ]
+          },
+          {
+            "group": "Earn",
+            "pages": [
+              "lending"
+            ]
+          },
+          {
+            "group": "Automate",
+            "pages": [
+              "relayera"
+            ]
+          },
+          {
+            "group": "Features",
+            "pages": [
+              "portfolio-accounts",
+              "marketplace"
+            ]
+          },
+          {
+            "group": "Resources",
+            "pages": [
+              "security",
+              "faq",
+              "tutorials"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "API Documentation",
+            "pages": [
+              "api-reference/introduction"
+            ]
+          },
+          {
+            "group": "Rewards",
+            "pages": [
+              "api-reference/endpoint/get",
+              "api-reference/endpoint/full-epoch-rewards",
+              "api-reference/endpoint/historical-rewards",
+              "api-reference/endpoint/weekly-summary",
+              "api-reference/endpoint/top-reward-earners"
+            ]
+          },
+          {
+            "group": "Voting",
+            "pages": [
+              "api-reference/endpoint/create",
+              "api-reference/endpoint/current-vote",
+              "api-reference/endpoint/vote-status",
+              "api-reference/endpoint/average-voting-apr",
+              "api-reference/endpoint/voting-apr-by-pool"
+            ]
+          },
+          {
+            "group": "Lending",
+            "pages": [
+              "api-reference/endpoint/delete",
+              "api-reference/endpoint/loan-history",
+              "api-reference/endpoint/historical-borrows"
+            ]
+          },
+          {
+            "group": "Leaderboard",
+            "pages": [
+              "api-reference/endpoint/webhook",
+              "api-reference/endpoint/all-time-leaderboard"
+            ]
+          },
+          {
+            "group": "Prices",
+            "pages": [
+              "api-reference/endpoint/underlying-prices",
+              "api-reference/endpoint/velo-aero-prices"
+            ]
+          },
+          {
+            "group": "Vaults",
+            "pages": [
+              "api-reference/endpoint/vault-info",
+              "api-reference/endpoint/user-vault-details"
+            ]
+          },
+          {
+            "group": "veNFT",
+            "pages": [
+              "api-reference/endpoint/ve-balance"
+            ]
+          },
+          {
+            "group": "Incentives",
+            "pages": [
+              "api-reference/endpoint/op-incentives"
+            ]
+          },
+          {
+            "group": "Statistics",
+            "pages": [
+              "api-reference/endpoint/protocol-stats"
+            ]
+          },
+          {
+            "group": "User",
+            "pages": [
+              "api-reference/endpoint/user-recap"
+            ]
+          }
+        ]
+      }
+    ]
+  }}
