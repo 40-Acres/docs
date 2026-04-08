@@ -1,11 +1,11 @@
 {"$schema":"https://mintlify.com/docs.json","theme":"mint","name":"40 Acres Finance","colors":{"primary":"#16A34A","light":"#07C983","dark":"#15803D"},"favicon":"/favicon.svg","navigation":{
     "tabs": [
       {
-        "tab": "Home",
+        "tab": "Start Here",
         "icon": "wheat",
         "groups": [
           {
-            "group": "Get Started",
+            "group": "Overview",
             "pages": [
               "home-page",
               "how-it-works"
@@ -53,7 +53,7 @@
         "icon": "plug",
         "groups": [
           {
-            "group": "Get Started",
+            "group": "Overview",
             "pages": [
               "api-reference/introduction"
             ]
