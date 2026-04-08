@@ -107,8 +107,8 @@
           {
             "group": "veNFT",
             "pages": [
-              "api-reference/endpoint/user-vault-details",
-              "api-reference/endpoint/ve-balance"
+              "api-reference/endpoint/ve-balance",
+              "api-reference/endpoint/user-vault-details"
             ]
           },
           {
