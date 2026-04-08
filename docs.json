@@ -1,4 +1,4 @@
-{"$schema":"https://mintlify.com/docs.json","theme":"mint","name":"40 Acres Finance","colors":{"primary":"#16A34A","light":"#07C983","dark":"#15803D"},"favicon":"/favicon.svg","navigation":{
+{"$schema":"https://mintlify.com/docs.json","theme":"mint","name":"40acres Finance","colors":{"primary":"#16A34A","light":"#07C983","dark":"#15803D"},"favicon":"/favicon.svg","navigation":{
     "tabs": [
       {
         "tab": "Start Here",
@@ -144,4 +144,6 @@
         ]
       }
     ]
-  }}
+  },
+  "logo": "/images/40AcresWhiteLogo.svg"
+}
