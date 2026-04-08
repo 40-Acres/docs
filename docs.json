@@ -49,7 +49,7 @@
         ]
       },
       {
-        "tab": "API List",
+        "tab": "API Reference",
         "icon": "plug",
         "groups": [
           {
@@ -134,11 +134,11 @@
         ]
       },
       {
-        "tab": "Contracts List",
+        "tab": "Contracts",
         "icon": "file-doc",
         "groups": [
           {
-            "group": "Start Here",
+            "group": "Overview",
             "pages": [
               "contracts"
             ]
