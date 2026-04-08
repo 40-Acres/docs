@@ -101,13 +101,13 @@
           {
             "group": "Vaults",
             "pages": [
-              "api-reference/endpoint/vault-info",
-              "api-reference/endpoint/user-vault-details"
+              "api-reference/endpoint/vault-info"
             ]
           },
           {
             "group": "veNFT",
             "pages": [
+              "api-reference/endpoint/user-vault-details",
               "api-reference/endpoint/ve-balance"
             ]
           },
