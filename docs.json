@@ -138,8 +138,10 @@
         "icon": "file-doc",
         "groups": [
           {
-            "group": "Get Started",
-            "pages": []
+            "group": "Start Here",
+            "pages": [
+              "contracts"
+            ]
           }
         ]
       }
