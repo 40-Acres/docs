@@ -48,7 +48,8 @@
         ]
       },
       {
-        "tab": "API Resource",
+        "tab": "API List",
+        "icon": "plug",
         "groups": [
           {
             "group": "API Documentation",
