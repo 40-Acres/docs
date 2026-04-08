@@ -1,0 +1,21 @@
+---
+title: 'Loan History'
+api: 'GET /api/loan-history/{protocol}/{tokenId}'
+description: 'Returns on-chain loan history for a specific veNFT token.'
+---
+
+## Path Parameters
+
+<ParamField path="protocol" type="string" required>
+  Protocol identifier. One of: `aerodrome`, `velodrome`, `pharaoh`, `blackhole`
+  </ParamField>
+
+  <ParamField path="tokenId" type="string" required>
+    The veNFT token ID to query.
+    </ParamField>
+
+    <RequestExample>
+    ```bash
+    curl "https://app.40acres.finance/api/loan-history/aerodrome/1234"
+    ```
+    </RequestExample>

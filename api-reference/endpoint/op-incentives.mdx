@@ -1,0 +1,71 @@
+---
+title: 'OP Incentives'
+api: 'POST /api/incentives/op-incentives'
+description: 'Returns OP incentive rewards for a wallet, broken down by epoch and token.'
+---
+
+## Query Parameters
+
+<ParamField query="protocolName" type="string" required>
+  Protocol identifier. One of: `aerodrome`, `velodrome`
+  </ParamField>
+
+  ## Request Body
+
+  <ParamField body="walletAddress" type="string" required>
+    The wallet address to query OP incentives for.
+    </ParamField>
+
+    ## Response
+
+    <ResponseField name="byEpoch" type="array">
+      Incentive rewards grouped by epoch.
+        <Expandable title="Epoch object">
+            <ResponseField name="epochTimestamp" type="number">Unix timestamp of the epoch start.</ResponseField>
+                <ResponseField name="epochTimestampISO" type="string">ISO 8601 epoch start timestamp.</ResponseField>
+                    <ResponseField name="tokens" type="array">
+                          Per-token reward breakdown.
+                                <Expandable title="Token object">
+                                        <ResponseField name="tokenId" type="string">veNFT token ID.</ResponseField>
+                                                <ResponseField name="token" type="string">Token symbol (e.g. `AERO`).</ResponseField>
+                                                        <ResponseField name="amount" type="number">Amount earned.</ResponseField>
+                                                              </Expandable>
+                                                                  </ResponseField>
+                                                                      <ResponseField name="total" type="number">Total rewards for this epoch across all tokens.</ResponseField>
+                                                                        </Expandable>
+                                                                        </ResponseField>
+
+                                                                        <ResponseField name="byToken" type="object">
+                                                                          Total rewards keyed by token symbol (e.g. `{"AERO": 1500.0}`).
+                                                                          </ResponseField>
+
+                                                                          <ResponseField name="total" type="number">
+                                                                            Grand total rewards across all epochs and tokens.
+                                                                            </ResponseField>
+
+                                                                            <RequestExample>
+                                                                            ```bash
+                                                                            curl -X POST "https://app.40acres.finance/api/incentives/op-incentives?protocolName=aerodrome" \
+                                                                              -H "Content-Type: application/json" \
+                                                                                -d '{"walletAddress": "0xYourWallet"}'
+                                                                                ```
+                                                                                </RequestExample>
+
+                                                                                <ResponseExample>
+                                                                                ```json
+                                                                                {
+                                                                                  "byEpoch": [
+                                                                                      {
+                                                                                            "epochTimestamp": 1704067200,
+                                                                                                  "epochTimestampISO": "2025-01-01T00:00:00Z",
+                                                                                                        "tokens": [
+                                                                                                                { "tokenId": "1234", "token": "AERO", "amount": 150.5 }
+                                                                                                                      ],
+                                                                                                                            "total": 150.5
+                                                                                                                                }
+                                                                                                                                  ],
+                                                                                                                                    "byToken": { "AERO": 1500.0 },
+                                                                                                                                      "total": 1500.0
+                                                                                                                                      }
+                                                                                                                                      ```
+                                                                                                                                      </ResponseExample>

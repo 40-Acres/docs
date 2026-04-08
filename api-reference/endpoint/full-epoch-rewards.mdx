@@ -1,0 +1,25 @@
+---
+title: 'Full Epoch Rewards'
+api: 'POST /api/full-epoch-rewards/{protocolName}'
+description: 'Returns complete reward data across all available epochs for the given token IDs.'
+---
+
+## Path Parameters
+
+<ParamField path="protocolName" type="string" required>
+  Protocol identifier. One of: `aerodrome`, `velodrome`, `pharaoh`, `blackhole`
+  </ParamField>
+
+  ## Request Body
+
+  <ParamField body="tokenIds" type="string[]" required>
+    List of veNFT token IDs to query.
+    </ParamField>
+
+    <RequestExample>
+    ```bash
+    curl -X POST https://app.40acres.finance/api/full-epoch-rewards/aerodrome \
+      -H "Content-Type: application/json" \
+        -d '{"tokenIds": ["1234", "5678"]}'
+        ```
+        </RequestExample>

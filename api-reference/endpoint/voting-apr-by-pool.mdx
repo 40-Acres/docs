@@ -1,0 +1,31 @@
+---
+title: 'Voting APR by Pool'
+api: 'GET /api/voting-apr/{protocolName}'
+description: 'Returns pool-level voting APR data for a protocol. Cached for 20 seconds.'
+---
+
+## Path Parameters
+
+<ParamField path="protocolName" type="string" required>
+  Protocol identifier. One of: `aerodrome`, `velodrome`, `pharaoh`, `blackhole`
+  </ParamField>
+
+  ## Query Parameters
+
+  <ParamField query="sortBy" type="string">
+    Field to sort results by. Defaults to `apr`.
+    </ParamField>
+
+    <ParamField query="order" type="string">
+      Sort order. One of: `asc`, `desc`. Defaults to `desc`.
+      </ParamField>
+
+      <ParamField query="minEarned" type="number">
+        Minimum earned filter. Defaults to `10`.
+        </ParamField>
+
+        <RequestExample>
+        ```bash
+        curl "https://app.40acres.finance/api/voting-apr/aerodrome?sortBy=apr&order=desc&minEarned=10"
+        ```
+        </RequestExample>

@@ -1,33 +1,58 @@
 ---
-title: 'Introduction'
-description: 'Example section for showcasing API endpoints'
+title: 'API Reference'
+description: 'Public REST API for the 40 Acres DeFi protocol.'
 ---
 
-<Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
-</Note>
+## Base URL
 
-## Welcome
+All endpoints are served from:
 
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
-
-<Card
-  title="Plant Store Endpoints"
-  icon="leaf"
-  href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
->
-  View the OpenAPI specification file
-</Card>
-
-## Authentication
-
-All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
-
-```json
-"security": [
-  {
-    "bearerAuth": []
-  }
-]
 ```
+https://app.40acres.finance/api
+```
+
+## Supported Protocols
+
+All endpoints that accept a `protocolName` parameter support the following values:
+
+| Protocol | Chain | Value |
+|----------|-------|-------|
+| Aerodrome | Base | `aerodrome` |
+| Velodrome | Optimism | `velodrome` |
+| Pharaoh | Avalanche | `pharaoh` |
+| Blackhole | Avalanche | `blackhole` |
+
+## Endpoint Groups
+
+<CardGroup cols={2}>
+  <Card title="Rewards" icon="coins" href="/api-reference/endpoint/rewards/last-epoch-rewards">
+      Epoch reward breakdowns, APR, historical data, and top earners.
+        </Card>
+          <Card title="Voting" icon="ballot-check" href="/api-reference/endpoint/voting/vote-history">
+              Vote history, current votes, status checks, and APR by pool.
+                </Card>
+                  <Card title="Lending" icon="hand-holding-dollar" href="/api-reference/endpoint/lending/get-credit-line">
+                      Credit line data, loan history, and borrow records.
+                        </Card>
+                          <Card title="Leaderboard" icon="trophy" href="/api-reference/endpoint/leaderboard/protocol-leaderboard">
+                              Per-epoch and all-time protocol leaderboards.
+                                </Card>
+                                  <Card title="Prices" icon="chart-line" href="/api-reference/endpoint/prices/underlying-prices">
+                                      Governance token prices and DexScreener feeds.
+                                        </Card>
+                                          <Card title="Vaults" icon="vault" href="/api-reference/endpoint/vaults/vault-info">
+                                              Vault data and per-user vault details.
+                                                </Card>
+                                                  <Card title="veNFT" icon="lock" href="/api-reference/endpoint/venft/venft-list">
+                                                      veNFT lists, VE balances, and token data.
+                                                        </Card>
+                                                          <Card title="Incentives" icon="fire" href="/api-reference/endpoint/incentives/op-incentives">
+                                                              OP incentive reward data by epoch and token.
+                                                                </Card>
+                                                                  <Card title="User" icon="user" href="/api-reference/endpoint/user/user-recap">
+                                                                      User activity recap and statistics.
+                                                                        </Card>
+                                                                          <Card title="Statistics" icon="chart-bar" href="/api-reference/endpoint/statistics/protocol-stats">
+                                                                              Protocol-level statistics across all supported chains.
+                                                                                </Card>
+                                                                                </CardGroup>

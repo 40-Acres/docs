@@ -1,0 +1,29 @@
+---
+title: 'Weekly Summary'
+api: 'POST /api/weekly-summary/{protocolName}'
+description: 'Returns a weekly reward summary for a specific epoch.'
+---
+
+## Path Parameters
+
+<ParamField path="protocolName" type="string" required>
+  Protocol identifier. One of: `aerodrome`, `velodrome`, `pharaoh`, `blackhole`
+  </ParamField>
+
+  ## Request Body
+
+  <ParamField body="tokenIds" type="string[]" required>
+    List of veNFT token IDs to include in the summary.
+    </ParamField>
+
+    <ParamField body="targetEpoch" type="number">
+      The epoch number to summarize. Defaults to the current epoch.
+      </ParamField>
+
+      <RequestExample>
+      ```bash
+      curl -X POST https://app.40acres.finance/api/weekly-summary/aerodrome \
+        -H "Content-Type: application/json" \
+          -d '{"tokenIds": ["1234", "5678"], "targetEpoch": 42}'
+          ```
+          </RequestExample>

@@ -1,0 +1,48 @@
+---
+title: 'VELO & AERO Prices'
+api: 'GET /api/get-velo-price'
+description: 'Returns current VELO and AERO prices via DexScreener. Cached for 30 minutes.'
+---
+
+## Response
+
+<ResponseField name="velo" type="object">
+  VELO token price data.
+    <Expandable title="Price object">
+        <ResponseField name="price" type="number">Current token price in USD.</ResponseField>
+            <ResponseField name="timestamp" type="string">Time the price was fetched (ISO 8601).</ResponseField>
+                <ResponseField name="cached" type="boolean">Whether this result was served from cache.</ResponseField>
+                  </Expandable>
+                  </ResponseField>
+
+                  <ResponseField name="aero" type="object">
+                    AERO token price data.
+                      <Expandable title="Price object">
+                          <ResponseField name="price" type="number">Current token price in USD.</ResponseField>
+                              <ResponseField name="timestamp" type="string">Time the price was fetched (ISO 8601).</ResponseField>
+                                  <ResponseField name="cached" type="boolean">Whether this result was served from cache.</ResponseField>
+                                    </Expandable>
+                                    </ResponseField>
+
+                                    <RequestExample>
+                                    ```bash
+                                    curl "https://app.40acres.finance/api/get-velo-price"
+                                    ```
+                                    </RequestExample>
+
+                                    <ResponseExample>
+                                    ```json
+                                    {
+                                      "velo": {
+                                          "price": 0.085,
+                                              "timestamp": "2025-01-01T00:00:00Z",
+                                                  "cached": false
+                                                    },
+                                                      "aero": {
+                                                          "price": 1.25,
+                                                              "timestamp": "2025-01-01T00:00:00Z",
+                                                                  "cached": true
+                                                                    }
+                                                                    }
+                                                                    ```
+                                                                    </ResponseExample>

@@ -1,0 +1,38 @@
+---
+title: 'All-Time Leaderboard'
+api: 'GET /api/leaderboard-all-epoch'
+description: 'Returns all-time averaged leaderboard data across all epochs for all protocols.'
+---
+
+## Response
+
+<ResponseField name="success" type="boolean">Whether the request succeeded.</ResponseField>
+<ResponseField name="data" type="object">
+  Leaderboard entries keyed by protocol name.
+    <Expandable title="Protocol keys">
+        <ResponseField name="aerodrome" type="array">All-time leaderboard entries for Aerodrome.</ResponseField>
+            <ResponseField name="velodrome" type="array">All-time leaderboard entries for Velodrome.</ResponseField>
+                <ResponseField name="pharaoh" type="array">All-time leaderboard entries for Pharaoh.</ResponseField>
+                    <ResponseField name="blackhole" type="array">All-time leaderboard entries for Blackhole.</ResponseField>
+                      </Expandable>
+                      </ResponseField>
+
+                      <RequestExample>
+                      ```bash
+                      curl "https://app.40acres.finance/api/leaderboard-all-epoch"
+                      ```
+                      </RequestExample>
+
+                      <ResponseExample>
+                      ```json
+                      {
+                        "success": true,
+                          "data": {
+                              "aerodrome": [],
+                                  "velodrome": [],
+                                      "pharaoh": [],
+                                          "blackhole": []
+                                            }
+                                            }
+                                            ```
+                                            </ResponseExample>

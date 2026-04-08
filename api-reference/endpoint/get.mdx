@@ -1,4 +1,75 @@
 ---
-title: 'Get Plants'
-openapi: 'GET /plants'
+title: 'Last Epoch Rewards'
+api: 'POST /api/last-epoch-rewards/{protocolName}'
+description: 'Returns reward breakdown and APR for the most recent epoch.'
 ---
+
+## Path Parameters
+
+<ParamField path="protocolName" type="string" required>
+  Protocol identifier. One of: `aerodrome`, `velodrome`, `pharaoh`, `blackhole`
+  </ParamField>
+
+  ## Request Body
+
+  <ParamField body="tokenIds" type="string[]" required>
+    List of veNFT token IDs to query.
+    </ParamField>
+
+    <ParamField body="customAddress" type="string">
+      Optional wallet address override.
+      </ParamField>
+
+      ## Response
+
+      <ResponseField name="tokenId" type="string">
+        The veNFT token ID.
+        </ResponseField>
+
+        <ResponseField name="rewards" type="object">
+          Token reward amounts keyed by symbol (e.g. `AERO`, `USDC`).
+          </ResponseField>
+
+          <ResponseField name="rebase" type="object">
+            Rebase amounts keyed by symbol.
+            </ResponseField>
+
+            <ResponseField name="apr" type="number">
+              Total APR for this epoch.
+              </ResponseField>
+
+              <ResponseField name="actualApr" type="number">
+                APR excluding rebase component.
+                </ResponseField>
+
+                <ResponseField name="rebaseApr" type="number">
+                  Rebase-only APR component.
+                  </ResponseField>
+
+                  <ResponseField name="epoch" type="number">
+                    Epoch number this data belongs to.
+                    </ResponseField>
+
+                    <RequestExample>
+                    ```bash
+                    curl -X POST https://app.40acres.finance/api/last-epoch-rewards/aerodrome \
+                      -H "Content-Type: application/json" \
+                        -d '{"tokenIds": ["1234", "5678"]}'
+                        ```
+                        </RequestExample>
+
+                        <ResponseExample>
+                        ```json
+                        [
+                          {
+                              "tokenId": "1234",
+                                  "rewards": { "AERO": 150.5, "USDC": 25.0 },
+                                      "rebase": { "UNDERLYING": 10.0, "USDC": 5.0 },
+                                          "apr": 32.5,
+                                              "actualApr": 28.1,
+                                                  "rebaseApr": 4.4,
+                                                      "epoch": 42
+                                                        }
+                                                        ]
+                                                        ```
+                                                        </ResponseExample>

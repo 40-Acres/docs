@@ -1,0 +1,29 @@
+---
+title: 'Historical Borrows'
+api: 'POST /api/historical-borrows/{protocol}/{tokenId}'
+description: 'Returns historical borrow data for a specific veNFT token.'
+---
+
+## Path Parameters
+
+<ParamField path="protocol" type="string" required>
+  Protocol identifier. One of: `aerodrome`, `velodrome`, `pharaoh`, `blackhole`
+  </ParamField>
+
+  <ParamField path="tokenId" type="string" required>
+    The veNFT token ID to query.
+    </ParamField>
+
+    ## Request Body
+
+    <ParamField body="currentBorrows" type="array">
+      Optional array of current borrow objects to merge with historical data. Defaults to empty array.
+      </ParamField>
+
+      <RequestExample>
+      ```bash
+      curl -X POST https://app.40acres.finance/api/historical-borrows/aerodrome/1234 \
+        -H "Content-Type: application/json" \
+          -d '{"currentBorrows": []}'
+          ```
+          </RequestExample>

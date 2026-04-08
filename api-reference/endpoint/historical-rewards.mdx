@@ -1,0 +1,29 @@
+---
+title: 'Historical Rewards'
+api: 'POST /api/historical-rewards/{protocol}/{tokenId}'
+description: 'Returns historical reward data for a specific token across all epochs.'
+---
+
+## Path Parameters
+
+<ParamField path="protocol" type="string" required>
+  Protocol identifier. One of: `aerodrome`, `velodrome`, `pharaoh`, `blackhole`
+  </ParamField>
+
+  <ParamField path="tokenId" type="string" required>
+    The veNFT token ID to query.
+    </ParamField>
+
+    ## Request Body
+
+    <ParamField body="currentRewards" type="array">
+      Optional array of current reward objects to merge with historical data. Defaults to empty array.
+      </ParamField>
+
+      <RequestExample>
+      ```bash
+      curl -X POST https://app.40acres.finance/api/historical-rewards/aerodrome/1234 \
+        -H "Content-Type: application/json" \
+          -d '{"currentRewards": []}'
+          ```
+          </RequestExample>

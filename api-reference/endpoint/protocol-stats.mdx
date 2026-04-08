@@ -1,0 +1,21 @@
+---
+title: 'Protocol Stats'
+api: 'GET /api/stats/{protocol}'
+description: 'Returns protocol-level statistics. Cached for 10 seconds. Omit protocol to return stats for all protocols.'
+---
+
+## Path Parameters
+
+<ParamField path="protocol" type="string">
+  Optional. Protocol identifier. One of: `aerodrome`, `velodrome`, `pharaoh`, `blackhole`. Omit to return stats across all protocols.
+  </ParamField>
+
+  <RequestExample>
+  ```bash
+  # All protocols
+  curl "https://app.40acres.finance/api/stats"
+
+  # Single protocol
+  curl "https://app.40acres.finance/api/stats/aerodrome"
+  ```
+  </RequestExample>

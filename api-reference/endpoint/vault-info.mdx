@@ -1,0 +1,28 @@
+---
+title: 'Vault Info'
+api: 'GET /api/vaults/{chain}/{address}'
+description: 'Returns vault data for a protocol or all protocols. Cached for 10 seconds.'
+---
+
+## Path Parameters
+
+<ParamField path="chain" type="string" required>
+  Protocol name or `all` to return vaults across all supported protocols.
+  </ParamField>
+
+  <ParamField path="address" type="string">
+    Optional user wallet address to include user-specific vault data.
+    </ParamField>
+
+    <RequestExample>
+    ```bash
+    # All vaults
+    curl "https://app.40acres.finance/api/vaults/all"
+
+    # Specific protocol
+    curl "https://app.40acres.finance/api/vaults/aerodrome"
+
+    # With user address
+    curl "https://app.40acres.finance/api/vaults/aerodrome/0xYourWallet"
+    ```
+    </RequestExample>

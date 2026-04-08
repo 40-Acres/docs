@@ -1,0 +1,21 @@
+---
+title: 'Underlying Token Prices'
+api: 'GET /api/prices/underlying/{asset}'
+description: 'Returns current prices for protocol governance tokens. Omit asset to return all.'
+---
+
+## Path Parameters
+
+<ParamField path="asset" type="string">
+  Optional. Token symbol to query. One of: `aero`, `velo`. Omit to return prices for all supported assets.
+  </ParamField>
+
+  <RequestExample>
+  ```bash
+  # All assets
+  curl "https://app.40acres.finance/api/prices/underlying"
+
+  # Single asset
+  curl "https://app.40acres.finance/api/prices/underlying/aero"
+  ```
+  </RequestExample>

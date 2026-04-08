@@ -1,0 +1,29 @@
+---
+title: 'veNFT List'
+api: 'POST /api/venft-list/{protocolName}'
+description: 'Returns all veNFTs owned by a wallet for a given protocol.'
+---
+
+## Path Parameters
+
+<ParamField path="protocolName" type="string" required>
+  Protocol identifier. One of: `aerodrome`, `velodrome`, `pharaoh`, `blackhole`
+  </ParamField>
+
+  ## Request Body
+
+  <ParamField body="address" type="string" required>
+    The wallet address to query veNFTs for.
+    </ParamField>
+
+    <ParamField body="assetAddress" type="string">
+      Optional. Filter results by a specific asset contract address.
+      </ParamField>
+
+      <RequestExample>
+      ```bash
+      curl -X POST https://app.40acres.finance/api/venft-list/aerodrome \
+        -H "Content-Type: application/json" \
+          -d '{"address": "0xYourWallet"}'
+          ```
+          </RequestExample>

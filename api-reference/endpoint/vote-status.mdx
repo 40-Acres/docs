@@ -1,0 +1,43 @@
+---
+title: 'Check Vote Status'
+api: 'POST /api/votes/{protocolName}'
+description: 'Check whether multiple tokens have voted in a given epoch.'
+---
+
+## Path Parameters
+
+<ParamField path="protocolName" type="string" required>
+  Protocol identifier. One of: `aerodrome`, `velodrome`, `pharaoh`, `blackhole`
+  </ParamField>
+
+  ## Request Body
+
+  <ParamField body="tokenIds" type="string[]" required>
+    List of veNFT token IDs to check.
+    </ParamField>
+
+    <ParamField body="epoch" type="number" required>
+      The epoch number to check vote status for.
+      </ParamField>
+
+      ## Response
+
+      <ResponseField name="votedLists" type="array">
+        Array of vote status objects, one per token.
+        </ResponseField>
+
+        <RequestExample>
+        ```bash
+        curl -X POST https://app.40acres.finance/api/votes/aerodrome \
+          -H "Content-Type: application/json" \
+            -d '{"tokenIds": ["1234", "5678"], "epoch": 42}'
+            ```
+            </RequestExample>
+
+            <ResponseExample>
+            ```json
+            {
+              "votedLists": []
+              }
+              ```
+              </ResponseExample>

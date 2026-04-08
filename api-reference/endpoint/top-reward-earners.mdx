@@ -1,0 +1,47 @@
+---
+title: 'Top Reward Earners'
+api: 'GET /api/last-epoch-rewards-by-address'
+description: 'Returns the top 10 reward earners by wallet address for the most recent epoch.'
+---
+
+## Response
+
+<ResponseField name="success" type="boolean">
+  Whether the request succeeded.
+  </ResponseField>
+
+  <ResponseField name="message" type="string">
+    Human-readable status message.
+    </ResponseField>
+
+    <ResponseField name="data" type="array">
+      Top 10 earners sorted by total rewards.
+
+        <Expandable title="Earner object">
+            <ResponseField name="address" type="string">Wallet address.</ResponseField>
+                <ResponseField name="totalRewards" type="number">Total rewards earned in USD this epoch.</ResponseField>
+                    <ResponseField name="veNftCount" type="number">Number of veNFTs held by this address.</ResponseField>
+                      </Expandable>
+                      </ResponseField>
+
+                      <RequestExample>
+                      ```bash
+                      curl https://app.40acres.finance/api/last-epoch-rewards-by-address
+                      ```
+                      </RequestExample>
+
+                      <ResponseExample>
+                      ```json
+                      {
+                        "success": true,
+                          "message": "Top 10 earners",
+                            "data": [
+                                {
+                                      "address": "0x...",
+                                            "totalRewards": 12500.50,
+                                                  "veNftCount": 3
+                                                      }
+                                                        ]
+                                                        }
+                                                        ```
+                                                        </ResponseExample>

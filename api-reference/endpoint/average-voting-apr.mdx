@@ -1,0 +1,52 @@
+---
+title: 'Average Voting APR'
+api: 'GET /api/votes/average-apr'
+description: 'Returns the average auto-voting APR for a protocol, optionally with per-epoch breakdown.'
+---
+
+## Query Parameters
+
+<ParamField query="protocol" type="string" required>
+  Protocol identifier. One of: `aerodrome`, `velodrome`, `pharaoh`, `blackhole`
+  </ParamField>
+
+  <ParamField query="details" type="boolean">
+    Set to `true` to include a per-epoch APR breakdown. Defaults to `false`.
+    </ParamField>
+
+    ## Response
+
+    <ResponseField name="success" type="boolean">Whether the request succeeded.</ResponseField>
+    <ResponseField name="protocol" type="string">The protocol queried.</ResponseField>
+    <ResponseField name="averageApr" type="number">Average APR across all counted epochs.</ResponseField>
+    <ResponseField name="epochCount" type="number">Number of epochs included in the average.</ResponseField>
+    <ResponseField name="epochs" type="array">
+      Per-epoch breakdown. Only present when `details=true`.
+        <Expandable title="Epoch object">
+            <ResponseField name="epochStartDate" type="string">Epoch start date (ISO 8601).</ResponseField>
+                <ResponseField name="apr" type="number">APR for this specific epoch.</ResponseField>
+                  </Expandable>
+                  </ResponseField>
+
+                  <RequestExample>
+                  ```bash
+                  curl "https://app.40acres.finance/api/votes/average-apr?protocol=aerodrome&details=true"
+                  ```
+                  </RequestExample>
+
+                  <ResponseExample>
+                  ```json
+                  {
+                    "success": true,
+                      "protocol": "aerodrome",
+                        "averageApr": 34.2,
+                          "epochCount": 12,
+                            "epochs": [
+                                {
+                                      "epochStartDate": "2025-01-01",
+                                            "apr": 32.5
+                                                }
+                                                  ]
+                                                  }
+                                                  ```
+                                                  </ResponseExample>

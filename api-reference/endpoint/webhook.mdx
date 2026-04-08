@@ -1,4 +1,61 @@
 ---
-title: 'New Plant'
-openapi: 'WEBHOOK /plant/webhook'
+title: 'Protocol Leaderboard'
+api: 'GET /api/leaderboard/{protocolName}'
+description: 'Returns ranked leaderboard entries for a protocol.'
 ---
+
+## Path Parameters
+
+<ParamField path="protocolName" type="string" required>
+  Protocol identifier. One of: `aerodrome`, `velodrome`, `pharaoh`, `blackhole`
+  </ParamField>
+
+  ## Query Parameters
+
+  <ParamField query="epoch" type="number">
+    Target epoch number. Defaults to current epoch.
+    </ParamField>
+
+    ## Response
+
+    <ResponseField name="entries" type="array">
+      Ranked list of leaderboard entries.
+
+        <Expandable title="Entry object">
+            <ResponseField name="rank" type="number">Position on the leaderboard.</ResponseField>
+                <ResponseField name="address" type="string">Truncated wallet address.</ResponseField>
+                    <ResponseField name="fullAddress" type="string">Full wallet address.</ResponseField>
+                        <ResponseField name="asset" type="string">Asset type (e.g. `veNFT`).</ResponseField>
+                            <ResponseField name="veNftValue" type="string">Total veNFT value in USD.</ResponseField>
+                                <ResponseField name="veNftBalance" type="number">Locked token balance.</ResponseField>
+                                    <ResponseField name="apr" type="string">APR as a percentage string.</ResponseField>
+                                        <ResponseField name="tokenId" type="string">veNFT token ID.</ResponseField>
+                                            <ResponseField name="epoch" type="string">Epoch number.</ResponseField>
+                                              </Expandable>
+                                              </ResponseField>
+
+                                              <RequestExample>
+                                              ```bash
+                                              curl "https://app.40acres.finance/api/leaderboard/aerodrome?epoch=42"
+                                              ```
+                                              </RequestExample>
+
+                                              <ResponseExample>
+                                              ```json
+                                              {
+                                                "entries": [
+                                                    {
+                                                          "rank": 1,
+                                                                "address": "0xab...cd",
+                                                                      "fullAddress": "0xabcd...",
+                                                                            "asset": "veNFT",
+                                                                                  "veNftValue": "125000.00",
+                                                                                        "veNftBalance": 50000,
+                                                                                              "apr": "42.5",
+                                                                                                    "tokenId": "1234",
+                                                                                                          "epoch": "42"
+                                                                                                              }
+                                                                                                                ]
+                                                                                                                }
+                                                                                                                ```
+                                                                                                                </ResponseExample>

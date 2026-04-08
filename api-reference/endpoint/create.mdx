@@ -1,4 +1,68 @@
 ---
-title: 'Create Plant'
-openapi: 'POST /plants'
+title: 'Vote History'
+api: 'POST /api/vote-history/{protocolName}'
+description: 'Returns full voting history for a token, grouped by epoch.'
 ---
+
+## Path Parameters
+
+<ParamField path="protocolName" type="string" required>
+  Protocol identifier. One of: `aerodrome`, `velodrome`, `pharaoh`, `blackhole`
+  </ParamField>
+
+  ## Request Body
+
+  <ParamField body="tokenId" type="string" required>
+    The veNFT token ID to query.
+    </ParamField>
+
+    ## Response
+
+    <ResponseField name="epochs" type="array">
+      Array of epoch objects, each containing votes for that period.
+
+        <Expandable title="Epoch object">
+            <ResponseField name="epochNumber" type="number">Epoch number.</ResponseField>
+                <ResponseField name="startDate" type="string">Epoch start date (ISO 8601).</ResponseField>
+                    <ResponseField name="endDate" type="string">Epoch end date (ISO 8601).</ResponseField>
+                        <ResponseField name="votes" type="array">
+                              Array of vote allocations.
+                                    <Expandable title="Vote object">
+                                            <ResponseField name="poolName" type="string">Human-readable pool name.</ResponseField>
+                                                    <ResponseField name="poolAddress" type="string">Pool contract address.</ResponseField>
+                                                            <ResponseField name="weight" type="number">Vote weight allocated to this pool.</ResponseField>
+                                                                    <ResponseField name="isAbstained" type="boolean">Whether this vote was abstained.</ResponseField>
+                                                                          </Expandable>
+                                                                              </ResponseField>
+                                                                                </Expandable>
+                                                                                </ResponseField>
+
+                                                                                <RequestExample>
+                                                                                ```bash
+                                                                                curl -X POST https://app.40acres.finance/api/vote-history/aerodrome \
+                                                                                  -H "Content-Type: application/json" \
+                                                                                    -d '{"tokenId": "1234"}'
+                                                                                    ```
+                                                                                    </RequestExample>
+
+                                                                                    <ResponseExample>
+                                                                                    ```json
+                                                                                    {
+                                                                                      "epochs": [
+                                                                                          {
+                                                                                                "epochNumber": 42,
+                                                                                                      "startDate": "2025-01-01",
+                                                                                                            "endDate": "2025-01-08",
+                                                                                                                  "votes": [
+                                                                                                                          {
+                                                                                                                                    "poolName": "USDC/AERO",
+                                                                                                                                              "poolAddress": "0x...",
+                                                                                                                                                        "weight": 50.0,
+                                                                                                                                                                  "isAbstained": false
+                                                                                                                                                                          }
+                                                                                                                                                                                ]
+                                                                                                                                                                                    }
+                                                                                                                                                                                      ]
+                                                                                                                                                                                      }
+                                                                                                                                                                                      ```
+                                                                                                                                                                                      </ResponseExample>

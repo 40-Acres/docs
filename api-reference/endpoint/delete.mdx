@@ -1,4 +1,29 @@
 ---
-title: 'Delete Plant'
-openapi: 'DELETE /plants/{id}'
+title: 'Get Credit Line'
+api: 'GET /api/get-credit-line'
+description: 'Returns credit line information for a wallet.'
 ---
+
+## Query Parameters
+
+<ParamField query="address" type="string" required>
+  Wallet address to query.
+  </ParamField>
+
+  <ParamField query="customAddress" type="string">
+    Optional address override.
+    </ParamField>
+
+    <ParamField query="protocolName" type="string">
+      Required if `customAddress` is set. One of: `aerodrome`, `velodrome`, `pharaoh`, `blackhole`
+      </ParamField>
+
+      <ParamField query="assetAddress" type="string">
+        Filter results by asset contract address.
+        </ParamField>
+
+        <RequestExample>
+        ```bash
+        curl "https://app.40acres.finance/api/get-credit-line?address=0xYourWallet"
+        ```
+        </RequestExample>

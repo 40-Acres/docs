@@ -1,0 +1,43 @@
+---
+title: 'Get Current Vote'
+api: 'POST /api/votes-single/{protocolName}'
+description: 'Returns the most recent vote allocation for a single token.'
+---
+
+## Path Parameters
+
+<ParamField path="protocolName" type="string" required>
+  Protocol identifier. One of: `aerodrome`, `velodrome`, `pharaoh`, `blackhole`
+  </ParamField>
+
+  ## Request Body
+
+  <ParamField body="tokenId" type="string" required>
+    The veNFT token ID to query.
+    </ParamField>
+
+    ## Response
+
+    <ResponseField name="tokenId" type="string">The veNFT token ID.</ResponseField>
+    <ResponseField name="votedThisEpoch" type="boolean">Whether this token has voted in the current epoch.</ResponseField>
+    <ResponseField name="pools" type="string[]">Array of pool addresses this token voted for.</ResponseField>
+    <ResponseField name="epoch" type="number">The current epoch number.</ResponseField>
+
+    <RequestExample>
+    ```bash
+    curl -X POST https://app.40acres.finance/api/votes-single/aerodrome \
+      -H "Content-Type: application/json" \
+        -d '{"tokenId": "1234"}'
+        ```
+        </RequestExample>
+
+        <ResponseExample>
+        ```json
+        {
+          "tokenId": "1234",
+            "votedThisEpoch": true,
+              "pools": ["0xabc...", "0xdef..."],
+                "epoch": 42
+                }
+                ```
+                </ResponseExample>
