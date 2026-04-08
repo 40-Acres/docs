@@ -1,35 +1,16 @@
 ---
-title: "API Reference"
-description: "Public REST API for the 40 Acres DeFi protocol."
+title: 'API Reference'
+description: 'Public REST API for the 40 Acres DeFi protocol.'
 ---
 
 ## Base URL
 
-All endpoints are served from:
-
-```text
-https://app.40acres.finance/api
-```
+All endpoints are served from: https://app.40acres.finance/api
 
 ## Supported Protocols
 
----
-
-title: 'API Reference'
-
-description: 'Public REST API for the 40 Acres DeFi protocol.'
-
----
-
-## Base URL
-
-All endpoints are served from:
-
-```text
-```
-
-| [https://app.40acres.finance/api](https://app.40acres.finance/api)<br />\`\`\`<br /><br />## Supported Protocols<br /><br />All endpoints that accept a `protocolName` parameter support the following values:<br /><br />\| Protocol \| Chain \| Value \|<br />\|----------\|-------\|-------\|<br />\| Aerodrome \| Base \| `aerodrome` \|<br />\| Velodrome \| Optimism \| `velodrome` \|<br />\| Pharaoh \| Avalanche \| `pharaoh` \|<br />\| Blackhole \| Avalanche \| `blackhole` \|<br /><br />## Endpoint Groups<br /><br />\<CardGroup cols={2}\><br />  \<Card title="Rewards" icon="coins" href="https://40acres.mintlify.app/api-reference/endpoint/get"\><br />    Epoch reward breakdowns, APR, historical data, and top earners.<br />  \</Card\><br />  \<Card title="Voting" icon="ballot-check" href="https://40acres.mintlify.app/api-reference/endpoint/create"\><br />    Vote history, current votes, status checks, and APR by pool.<br />  \</Card\><br />  \<Card title="Lending" icon="hand-holding-dollar" href="https://40acres.mintlify.app/api-reference/endpoint/delete"\><br />    Credit line data, loan history, and borrow records.<br />  \</Card\><br />  \<Card title="Leaderboard" icon="trophy" href="https://40acres.mintlify.app/api-reference/endpoint/webhook"\><br />    Per-epoch and all-time protocol leaderboards.<br />  \</Card\><br />  \<Card title="Prices" icon="chart-line" href="https://40acres.mintlify.app/api-reference/endpoint/underlying-prices"\><br />    Governance token prices and DexScreener feeds.<br />  \</Card\><br />  \<Card title="Vaults" icon="vault" href="https://40acres.mintlify.app/api-reference/endpoint/vault-info"\><br />    Vault data and per-user vault details.<br />  \</Card\><br />  \<Card title="veNFT" icon="lock" href="https://40acres.mintlify.app/api-reference/endpoint/venft-list"\><br />    veNFT lists, VE balances, and token data.<br />  \</Card\><br />  \<Card title="Incentives" icon="fire" href="https://40acres.mintlify.app/api-reference/endpoint/op-incentives"\><br />    OP incentive reward data by epoch and token.<br />  \</Card\><br />  \<Card title="Statistics" icon="chart-bar" href="https://40acres.mintlify.app/api-reference/endpoint/protocol-stats"\><br />    Protocol-level statistics across all supported chains.<br />  \</Card\><br />  \<Card title="User" icon="user" href="https://40acres.mintlify.app/api-reference/endpoint/user-recap"\><br />    User activity recap and statistics.<br />  \</Card\><br />\</CardGroup\> Protocol | Chain | Value |
-| --- | --- | --- |
+| Protocol | Chain | Value |
+|----------|-------|-------|
 | Aerodrome | Base | `aerodrome` |
 | Velodrome | Optimism | `velodrome` |
 | Pharaoh | Avalanche | `pharaoh` |
@@ -38,43 +19,14 @@ All endpoints are served from:
 ## Endpoint Groups
 
 <CardGroup cols={2}>
-  <Card title="Rewards" icon="coins" href="/api-reference/endpoint/rewards/last-epoch-rewards">
-    Epoch reward breakdowns, APR, historical data, and top earners.
-  </Card>
-
-  <Card title="Voting" icon="ballot-check" href="/api-reference/endpoint/voting/vote-history">
-    Vote history, current votes, status checks, and APR by pool.
-  </Card>
-
-  <Card title="Lending" icon="hand-holding-dollar" href="/api-reference/endpoint/lending/get-credit-line">
-    Credit line data, loan history, and borrow records.
-  </Card>
-
-  <Card title="Leaderboard" icon="trophy" href="/api-reference/endpoint/leaderboard/protocol-leaderboard">
-    Per-epoch and all-time protocol leaderboards.
-  </Card>
-
-  <Card title="Prices" icon="chart-line" href="/api-reference/endpoint/prices/underlying-prices">
-    Governance token prices and DexScreener feeds.
-  </Card>
-
-  <Card title="Vaults" icon="vault" href="/api-reference/endpoint/vaults/vault-info">
-    Vault data and per-user vault details.
-  </Card>
-
-  <Card title="veNFT" icon="lock" href="/api-reference/endpoint/venft/venft-list">
-    veNFT lists, VE balances, and token data.
-  </Card>
-
-  <Card title="Incentives" icon="fire" href="/api-reference/endpoint/incentives/op-incentives">
-    OP incentive reward data by epoch and token.
-  </Card>
-
-  <Card title="User" icon="user" href="/api-reference/endpoint/user/user-recap">
-    User activity recap and statistics.
-  </Card>
-
-  <Card title="Statistics" icon="chart-bar" href="/api-reference/endpoint/statistics/protocol-stats">
-    Protocol-level statistics across all supported chains.
-  </Card>
+  <Card title="Rewards" icon="coins" href="https://40acres.mintlify.app/api-reference/endpoint/get">Epoch reward breakdowns, APR, historical data, and top earners.</Card>
+  <Card title="Voting" icon="ballot-check" href="https://40acres.mintlify.app/api-reference/endpoint/create">Vote history, current votes, status checks, and APR by pool.</Card>
+  <Card title="Lending" icon="hand-holding-dollar" href="https://40acres.mintlify.app/api-reference/endpoint/delete">Credit line data, loan history, and borrow records.</Card>
+  <Card title="Leaderboard" icon="trophy" href="https://40acres.mintlify.app/api-reference/endpoint/webhook">Per-epoch and all-time protocol leaderboards.</Card>
+  <Card title="Prices" icon="chart-line" href="https://40acres.mintlify.app/api-reference/endpoint/underlying-prices">Governance token prices and DexScreener feeds.</Card>
+  <Card title="Vaults" icon="vault" href="https://40acres.mintlify.app/api-reference/endpoint/vault-info">Vault data and per-user vault details.</Card>
+  <Card title="veNFT" icon="lock" href="https://40acres.mintlify.app/api-reference/endpoint/venft-list">veNFT lists, VE balances, and token data.</Card>
+  <Card title="Incentives" icon="fire" href="https://40acres.mintlify.app/api-reference/endpoint/op-incentives">OP incentive reward data by epoch and token.</Card>
+  <Card title="Statistics" icon="chart-bar" href="https://40acres.mintlify.app/api-reference/endpoint/protocol-stats">Protocol-level statistics across all supported chains.</Card>
+  <Card title="User" icon="user" href="https://40acres.mintlify.app/api-reference/endpoint/user-recap">User activity recap and statistics.</Card>
 </CardGroup>
