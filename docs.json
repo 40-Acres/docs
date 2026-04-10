@@ -10,7 +10,7 @@
     "favicon": "/favicon.svg",
     "logo": "/images/40AcresWhiteLogo.svg",
     "api": {
-          "baseUrl": "https://app.40acres.finance",
+          "baseUrl": "https://40acres.finance",
           "playground": {
                   "mode": "simple"
           }
