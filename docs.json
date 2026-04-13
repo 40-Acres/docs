@@ -59,9 +59,10 @@
             {
               "group": "Resources",
               "pages": [
+                "tutorials",
                 "security",
-                "faq",
-                "tutorials"
+                "treasury",
+                "faq"
               ]
             }
           ]
