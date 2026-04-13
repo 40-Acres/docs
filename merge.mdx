@@ -1,4 +1,77 @@
 ---
-title: 'Merge'
+title: "Merge & Increase"
+description: "Consolidate assets and add tokens directly to your collateral to boost rewards and accelerate loan repayment."
 ---
 
+## Overview
+
+The Merge and Increase features let you grow the earning power of your deposited collateral, without opening a new loan. A larger asset generates more weekly epoch rewards, which means your loan repays faster.
+
+## Merge 
+
+Combine assets in your wallet with the existing collatreral you already have deposited inside 40 Acres. The two become one larger position with a stronger reward output.
+
+**When to use this:**
+
+- You bought a new asset on a secondary market and want to consolidate it with your existing collateral
+- You want to simplify your portfolio - one position instead of managing two separately
+- You want to accelerate loan repayment without depositing more USDC
+
+**How it works:**
+
+1. You deposit an asset as collateral in 40 Acres
+2. You acquire another asset, and it's sitting in your wallet
+3. Go to the customizable panel under your collateral type and click "merge"
+4. The wallet asks you to select the asset that you wish to merge into your in-protocol collateral
+5. Your collateral is now one larger rev generating asset earning higher rewards
+
+<Warning>
+  Merge only works with assets that are **outside** the 40 Acres protocol. You cannot merge two collaterals that are both already deposited as - one must be in your wallet.
+</Warning>
+
+---
+
+## Increase Lock
+
+Add native spot tokens directly to your deposited collateral to increase it's weekly epoch rewards.
+
+**When to use this:**
+
+- You've accumulated governance tokens and want to put them to work
+- You want to increase your collaterals voting power and reward output
+- You want to accelerate loan repayment without opening a new position
+
+<Note>
+  Increase Lock is **not the same as Reinvest**. Reinvest compounds your epoch rewards back into the position automatically. Increase Lock takes tokens you already hold in your wallet and adds them directly to the collaterals balance - it's a manual top-up.
+</Note>
+
+**Supported tokens:**
+
+| DEX | Chain | Token |
+| --- | --- | --- |
+| Aerodrome | Base | AERO |
+| Velodrome | Optimism | VELO |
+| Pharaoh | Avalanche | PHAR |
+| Blackhole | Avalanche | BLAKC |
+
+---
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Can I merge two collaterals that are both inside the protocol?">
+    No. Merge only works when one asset is in your wallet and one is deposited as collateral. You cannot merge two in-protocol collaterals.
+  </Accordion>
+
+  <Accordion title="Does merging affect my loan terms?">
+    Merging increases the size of your collateral, which increases its weekly epoch rewards. This accelerates your loan repayment - it does not change your outstanding loan balance or add new debt.
+  </Accordion>
+
+  <Accordion title="What's the difference between Increase Lock and Reinvest?">
+    Reinvest automatically takes your earned epoch rewards and compounds them back into the position. Increase Lock is a manual action - you bring tokens from your wallet and add them directly to the collaterals balance.
+  </Accordion>
+
+  <Accordion title="Does Increase Lock affect my loan terms?">
+    No, it does not change your outstanding loan balance. It increases the value of existing collateral & voting power, which generates higher rewards and speeds up repayment.
+  </Accordion>
+</AccordionGroup>
