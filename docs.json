@@ -23,6 +23,7 @@
           "groups": [
             {
               "group": "Overview",
+              "icon": "wheat",
               "pages": [
                 "home-page",
                 "how-it-works"
@@ -30,20 +31,25 @@
             },
             {
               "group": "Borrow",
+              "icon": "wheat",
               "pages": [
                 "borrowing",
                 "fee-structure",
-                "voting"
+                "voting",
+                "assets"
               ]
             },
             {
               "group": "Earn",
+              "icon": "wheat",
               "pages": [
-                "lending"
+                "lending",
+                "assets-1"
               ]
             },
             {
               "group": "Automate",
+              "icon": "wheat",
               "pages": [
                 "relayera",
                 "merge"
@@ -51,6 +57,7 @@
             },
             {
               "group": "Features",
+              "icon": "wheat",
               "pages": [
                 "portfolio-accounts",
                 "marketplace"
@@ -58,6 +65,7 @@
             },
             {
               "group": "Resources",
+              "icon": "wheat",
               "pages": [
                 "tutorials",
                 "security",
