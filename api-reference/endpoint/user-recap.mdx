@@ -1,27 +1,29 @@
 ---
-title: 'User Recap'
-api: 'GET /api/recap/{address}'
-description: 'Returns a full activity recap and statistics for a wallet address.'
+title: "User Recap"
+api: "GET /api/recap/{address}"
+description: "Returns a full activity recap and statistics for a wallet address."
 ---
 
 ## Path Parameters
 
 <ParamField path="address" type="string" required>
   The wallet address to query.
-  </ParamField>
+</ParamField>
 
-  ## Query Parameters
+## Query Parameters
 
-  <ParamField query="protocol" type="string">
-    Optional. Filter results by protocol. One of: `aerodrome`, `velodrome`, `pharaoh`, `blackhole`
-    </ParamField>
+<ParamField query="protocol" type="string">
+  Optional. Filter results by protocol. One of: `aerodrome`, `velodrome`, `pharaoh`, `blackhole`
+</ParamField>
 
-    <RequestExample>
-    ```bash
-    # All protocols
-    curl "https://app.40acres.finance/api/recap/0xYourWallet"
+<RequestExample>
 
-    # Filtered by protocol
-    curl "https://app.40acres.finance/api/recap/0xYourWallet?protocol=aerodrome"
-    ```
-    </RequestExample>
+```bash
+# All protocols
+curl "https://40acres.finance/api/recap/0xYourWallet"
+
+# Filtered by protocol
+curl "https://40acres.finance/api/recap/0xYourWallet?protocol=aerodrome"
+```
+
+</RequestExample>
