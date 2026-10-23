@@ -1,0 +1,157 @@
+---
+title: "AI assistants (MCP)"
+description: "Connect Claude, Cursor or any MCP client to live 40 Acres data"
+icon: "robot"
+---
+
+Ask your AI assistant about 40 Acres and get answers from live data: vault APYs, borrow stats, voting pools, the marketplace, the leaderboard and any wallet's positions.
+
+The 40 Acres MCP server is a public, read-only [Model Context Protocol](https://modelcontextprotocol.io) server. You add one URL to your AI client. No account, no API key, no wallet connection.
+
+```text
+https://mcp.40acres.finance/mcp
+```
+
+<Note>
+  The server is **read-only**. It can't build, sign or send transactions, so it can't move funds. If you ask it to repay a loan or vote, your assistant will say it can't.
+</Note>
+
+## Connect your assistant
+
+<Tabs>
+  <Tab title="Claude (web and desktop)">
+    <Steps>
+      <Step title="Open connectors">
+        In [claude.ai](https://claude.ai) or the Claude desktop app, go to **Settings** → **Connectors**.
+      </Step>
+      <Step title="Add a custom connector">
+        Click **Add custom connector**. Name it `40acres` and paste the URL:
+
+        ```text
+        https://mcp.40acres.finance/mcp
+        ```
+
+        Leave the authentication settings empty.
+      </Step>
+      <Step title="Turn it on in a chat">
+        In a new chat, open the tools menu and make sure **40acres** is enabled. Then ask a question.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Claude Code">
+    Run this once in your terminal:
+
+    ```bash
+    claude mcp add --transport http 40acres https://mcp.40acres.finance/mcp
+    ```
+
+    Start `claude` and ask a question. Run `/mcp` to check the server is connected.
+  </Tab>
+  <Tab title="Cursor">
+    Add the server to `~/.cursor/mcp.json` (all projects) or `.cursor/mcp.json` (one project):
+
+    ```json
+    {
+      "mcpServers": {
+        "40acres": {
+          "url": "https://mcp.40acres.finance/mcp"
+        }
+      }
+    }
+    ```
+
+    Open **Settings** → **MCP** and check that **40acres** shows as enabled.
+  </Tab>
+  <Tab title="VS Code">
+    Add the server to `.vscode/mcp.json`:
+
+    ```json
+    {
+      "servers": {
+        "40acres": {
+          "type": "http",
+          "url": "https://mcp.40acres.finance/mcp"
+        }
+      }
+    }
+    ```
+
+    Use it from Copilot Chat in **Agent** mode.
+  </Tab>
+  <Tab title="Other clients">
+    Any client that supports remote MCP servers over Streamable HTTP works: paste `https://mcp.40acres.finance/mcp` and skip authentication.
+
+    If your client only runs local (stdio) servers, bridge it with `mcp-remote`:
+
+    ```json
+    {
+      "mcpServers": {
+        "40acres": {
+          "command": "npx",
+          "args": ["-y", "mcp-remote", "https://mcp.40acres.finance/mcp"]
+        }
+      }
+    }
+    ```
+  </Tab>
+</Tabs>
+
+## What you can ask
+
+You don't need to know the tool names. Ask in plain language and your assistant picks the right tools.
+
+- "Which protocols does 40 Acres support?"
+- "What's the best vault APY on 40 Acres right now?"
+- "How has the Aero USDC vault APY moved over the last 30 days?"
+- "How much is borrowed on Hydrex, and how much liquidity is left?"
+- "What are the top voting pools on Aero?"
+- "What's the cheapest veNFT for sale on the marketplace?"
+- "Who's top of the Aero leaderboard this epoch?"
+- "Show me the positions of 0x…, and what their sAERO stakes have earned but not claimed yet."
+
+## Available data
+
+The server exposes 18 tools. Every answer comes with an `asOf` timestamp so you know how fresh it is.
+
+| Topic | What you get |
+| :-- | :-- |
+| **Protocols** | Supported protocols, their chain, collateral token and whether they have vaults and a marketplace |
+| **Protocol stats** | Total supplied, total borrowed, available liquidity, average vault APY, last epoch's rewards, vault utilization |
+| **Prices** | The USD prices 40 Acres uses for protocol tokens and base assets |
+| **Borrowers** | Average loan-to-value and number of borrowers per protocol |
+| **Vaults** | USDC vault APYs and deposits, daily APY history over 7, 30 or 90 days, and Merkl incentive campaigns |
+| **Voting** | Voting pools with their APR, and the APR earned by 40 Acres-managed votes epoch by epoch |
+| **Marketplace** | veNFTs listed for sale (newest or cheapest) and recent sales |
+| **Leaderboard** | Top-earning positions of the latest epoch, ranked by APR |
+| **Wallets** | A wallet's portfolio accounts, loans and collateral, the history of each position, and its lender position in a vault |
+| **sAERO stakes** | Which pools a stake allocates to, and the rewards it has earned but not claimed yet |
+| **Announcements** | The latest official 40 Acres announcements |
+
+Wallet data is public on-chain data. You can look up any address, not only your own.
+
+## Limits
+
+- **Rate limit:** 60 tool calls per minute per IP address. Over the limit, your assistant gets a "retry in N seconds" message.
+- **Freshness:** answers are cached for 30 seconds (prices, stats) up to 10 minutes (history, leaderboard).
+- **Units:** USD and token amounts are plain numbers, rates are percentages (`12.4` means 12.4%), times are UTC.
+
+<Warning>
+  AI assistants can misread data or get numbers wrong. Check figures in the [40 Acres app](https://app.40acres.finance) before you make a financial decision.
+</Warning>
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Do I need to connect my wallet or share a private key?">
+    No. The server never asks for a wallet, a signature or a key. To look up positions, give your assistant a public wallet address.
+  </Accordion>
+  <Accordion title="Can the assistant borrow, repay or vote for me?">
+    No. The server is read-only. Use the [40 Acres app](https://app.40acres.finance) for any transaction.
+  </Accordion>
+  <Accordion title="Does it cost anything?">
+    The server is free. Your AI client's own plan and limits still apply.
+  </Accordion>
+  <Accordion title="My assistant says a tool is temporarily unavailable">
+    A data source behind 40 Acres didn't answer in time. Wait a minute and ask again.
+  </Accordion>
+</AccordionGroup>

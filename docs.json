@@ -59,6 +59,12 @@
               ]
             },
             {
+              "group": "Integrations",
+              "pages": [
+                "ai-assistants"
+              ]
+            },
+            {
               "group": "Resources",
               "pages": [
                 "tutorials",
