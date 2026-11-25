@@ -9,19 +9,25 @@ Common questions about 40 Acres Finance.
 
 <AccordionGroup>
   <Accordion title="What is a veNFT?">
-    A veNFT is a vote-escrowed NFT issued by DEXes like Aerodrome, Velodrome, Pharaoh, and Blackhole. When you lock a token (e.g., AERO) for a period of time, you receive a veNFT representing your locked position. The veNFT earns weekly epoch rewards, fees , and bribes from the pools it votes on.
+    A veNFT is a vote-escrowed NFT issued by DEXes like Hydrex, Pharaoh, and Blackhole. When you lock a token for a period of time, you receive a veNFT representing your locked position. The veNFT earns weekly epoch rewards, fees, and bribes from the pools it votes on.
+  </Accordion>
+
+  <Accordion title="What is sAERO?">
+    sAERO is staked AERO on Aerodrome. It votes for pools and earns rewards continuously, and its votes stay in place until they're changed. On 40 Acres, sAERO is the collateral for Aerodrome loans.
   </Accordion>
 
   <Accordion title="Can my collateral be liquidated?">
-    Depending on the asset type, yes. Currently, veNFT loans are non-liquidating. Updated revenue generating asset liquidation list coming soon.
+    Not on a self-repaying loan. Self-repaying loans are non-liquidating.
+
+    [Fixed-fee loans](/fixed-fee-loans) are different. They can lose their collateral if AERO's price stays below the loan's trigger price, or if the term ends before you repay.
   </Accordion>
 
   <Accordion title="Is there interest on my loan?">
-    Yes, and no. No interest in the traditional sense. The only costs are an origination fee at loan opening, and then a % of your revenue generated paid to lenders every week.
+    No. A self-repaying loan has no interest. You pay an origination fee each time you borrow, and a share of your rewards goes to lenders and the protocol. See [fee structure](/fee-structure).
   </Accordion>
 
   <Accordion title="How long does it take for my loan to repay?">
-    It depends on your assets reward generation relative to your loan size. At current reward rates, most loans repay within several months. You can track your projected repayment timeline in real time on the dashboard.
+    It depends on how much your collateral earns compared with your loan size. A larger loan takes longer, and a full-size loan takes many weeks. You can track your projected repayment timeline in real time on the dashboard.
   </Accordion>
 
   <Accordion title="Can I repay early?">
@@ -33,18 +39,18 @@ Common questions about 40 Acres Finance.
   </Accordion>
 
   <Accordion title="What chains does 40 Acres support?">
-    40 Acres currently operates on Base (Aerodrome / veAERO), Optimism (Velodrome / veVELO), and Avalanche (Pharaoh / xPHAR and Blackhole / veBLACK). Additional chains and collateral types coming soon.
+    40 Acres is live on Base (Aerodrome / sAERO and Hydrex / veHYDX) and Avalanche (Pharaoh / xPHAR). Blackhole on Avalanche and Velodrome on Optimism are closed to new loans, and existing loans keep repaying.
   </Accordion>
 
   <Accordion title="What is the vote optimizer?">
-    The vote optimizer is 40 Acres' automated voting system. When you deposit an asset, the optimizer allocates your voting power each epoch to the pools expected to generate the highest rewards. More rewards = faster loan repayment. You can override it with manual votes if you prefer.
+    The vote optimizer is 40 Acres' automated voting system. When you deposit an asset, the optimizer allocates your voting power to the pools expected to generate the highest rewards. More rewards = faster loan repayment. You can override it with manual votes if you prefer.
   </Accordion>
 
   <Accordion title="What are Portfolio Accounts?">
-    Portfolio Accounts are a Q2 2026 upgrade that lets you borrow against a basket of collateral: multiple veNFTs, ERC4626 tokens, and other revenue generating assets from a single account. They also introduce cross-chain repayment, customizable reward strategies, and the 40Acres Marketplace. All existing users will be given the choice to migrate once launched. New users will be opted in automatically.
+    Portfolio Accounts hold your collateral, debt and reward settings. A borrower account can hold several pieces of collateral against one loan, and a Relayer account runs a reward strategy with no loan. You choose a reward strategy and voting mode for each account. See [Portfolio Accounts](/portfolio-accounts).
   </Accordion>
 
   <Accordion title="Is 40 Acres audited?">
-    Yes. 40 Acres has completed four independent Sherlock audits. Audit reports are publicly available. → \[View Audits\](/resouces/audits & security)
+    Yes. 40 Acres has completed four independent Sherlock audits. Audit reports are publicly available. → [View audits](/security)
   </Accordion>
 </AccordionGroup>

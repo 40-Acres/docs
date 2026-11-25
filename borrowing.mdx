@@ -5,44 +5,49 @@ icon: "arrow-up-right"
 
 How to open a self-repaying loan on 40 Acres.
 
-## Opening a Loan
+## Opening a loan
 
-Borrowing on 40 Acres requires a single one-time setup:
+1. **Connect your wallet** at [app.40acres.finance](https://app.40acres.finance) and open the Borrow dashboard.
+2. **Add your collateral.** That's sAERO on Aerodrome, or a veNFT on other markets. It goes into your [Portfolio Account](/portfolio-accounts).
+3. **Choose your borrow amount.** You can borrow up to your borrowing limit.
+4. **Confirm the transaction.** The USDC arrives in your wallet, minus the origination fee.
 
-1. **Connect wallet** and navigate to the Borrow dashboard
-2. **Select your asset** from the list of eligible collateral
-3. **Choose your borrow amount:** up to your maximum credit line
-4. **Confirm the transaction**: USDC arrives in your wallet instantly
+An **origination fee** is taken each time you borrow, and it's deducted from the USDC you receive. See [fee structure](/fee-structure).
 
-An **origination fee** is charged at the time the credit line is opened. This is the only upfront cost.
-
-## During Your Loan
+## During your loan
 
 Once a loan is open, 40 Acres handles everything:
 
-- Your collateral votes each epoch via the vote optimizer
-- Rewards are claimed automatically at epoch flip
-- X of your rewards are applied toward your loan balance
-- You can check your remaining debt and projected repayment timeline at any time on the dashboard
+- Your collateral votes for pools through the [vote optimizer](/voting).
+- Rewards are claimed and processed several times a week.
+- After the protocol fee, the lender premium and gas, your rewards repay your loan. See [where your rewards go](/fee-structure#where-your-rewards-go).
+- You can check your debt, your borrowing limit and your rewards on the dashboard.
 
-### Manual Voting
+### Manual voting
 
-You can override the vote optimizer and vote manually if you choose. Your votes must be placed on pools that 40 Acres supports. Manual voting does not affect repayment — rewards still flow to the protocol for processing.
+You can vote yourself instead of using the vote optimizer. With sAERO, you can vote for almost any Aerodrome pool. With veNFTs, your votes must go to pools that 40 Acres supports. Manual voting doesn't change how your rewards are split. See [Voting with sAERO](/voting) and [Voting with veNFTs](/voting-venfts).
 
-## Repaying Early
+## Repaying early
 
-You can repay any portion of your loan at any time at zero additional cost. Early repayment directly reduces your balance and shortens your timeline to collateral recovery.
+You can repay any portion of your loan at any time, with no fee. Early repayment directly reduces your balance and shortens your timeline to collateral recovery.
 
 Navigate to the Borrow dashboard → select your position → enter the repayment amount → confirm.
 
-## Topping Up
+## Adding collateral
 
-Once a loan is open, you can increase your borrowing capacity by adding more collateral to your position — either by depositing additional collateral or, with Portfolio Accounts, by adding other supported revenue-generating assets.
+You can add more collateral to your account at any time. More collateral earns more rewards, which raises your borrowing limit and speeds up repayment.
 
-Navigate to your active position → Top Up → select additional collateral.
+- **Aerodrome:** add another sAERO, create a new sAERO from AERO, or add AERO to an sAERO you already hold.
+- **Other markets:** increase your lock, or add more veNFTs where your market supports it. See [Merge & Increase](/merge).
 
-## Closing a Position
+## Auto Top-Up
 
-When your loan balance reaches zero, you will be able to withdraw it from the platform.
+With **Auto Top-Up** on, 40 Acres automatically borrows any new room under your limit and sends the USDC to your wallet. Turn it on in your account's settings. It currently works on Hydrex only, and turning it on elsewhere has no effect.
 
-If you want to close your position before full repayment, you can manually repay the remaining balance and withdraw your collateral immediately.
+## Withdrawing collateral
+
+When your loan balance reaches zero, you can withdraw all of your collateral.
+
+Before then, you can withdraw some collateral as long as what's left still covers your debt. To withdraw everything early, repay the rest of the loan first.
+
+On Velodrome, you can't withdraw collateral yourself. Contact 40 Acres.

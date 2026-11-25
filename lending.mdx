@@ -9,14 +9,14 @@ Deposit USDC and earn organic yield from 40 Acres borrower rewards.
 
 ## How Lending Works
 
-40 Acres uses a peer-to-pool lending model. Lenders deposit USDC into the vault. That USDC is used to fund borrower loans. Each epoch, borrowers' collateral rewards are collected and distributed back to lenders as yield.
+40 Acres uses a peer-to-pool lending model. Lenders deposit USDC into the vault. That USDC is used to fund borrower loans. As borrowers' collateral earns rewards, the lenders' share is paid into the vault as yield.
 
 This is **real yield** sourced from DEX trading fees and bribes, not token emissions. Your return is a function of how well the underlying DEX ecosystem performs, not a protocol subsidy.
 
 ## Depositing
 
 1. Navigate to the Earn dashboard
-2. Select the vault you want to deposit into (Base, Optimism, or Avalanche)
+2. Select the vault for the market you want to lend to
 3. Enter your USDC amount and confirm the transaction
 4. You begin earning yield immediately after your deposit is confirmed
 
@@ -24,16 +24,22 @@ Vault shares are ERC4626 compliant. Your position is represented by vault tokens
 
 ## Yield Distribution
 
-Yield is distributed continuously over the course of each 7-day epoch, based on the previous epoch's voting rewards. As utilization rises and falls, your yield share adjusts accordingly (with dynamic fees enabled).
+Yield reaches the vault's share price gradually. Rewards paid in are released over the rest of the week. On Aerodrome, Hydrex and Velodrome, the share of rewards that goes to lenders depends on each borrower's loan-to-value. See [fee structure](/fee-structure#dynamic-fees).
 
-Current APY range: **5–20%** depending on vault utilization and DEX epoch performance.
+Your APY moves with DEX rewards and with how much of the vault is lent out. The vault page shows the current rate.
+
+<Note>
+  A vault can be in recovery mode. The vault then takes no share of borrowers' rewards. All of it repays their loans, which returns capital to the vault. New loans are closed, and the vault page shows **Recovery** and a 0% APY.
+</Note>
 
 ## Withdrawing
 
-You can request a withdrawal at any time from the Earn dashboard. Withdrawals are subject to available liquidity. The protocol maintains an **80% utilization cap**, meaning at least 20% of vault funds must remain available for withdrawals.
+You can request a withdrawal at any time from the Earn dashboard. Withdrawals are subject to available liquidity. The **80% utilization cap** stops new borrowing once 80% of a vault is lent out. It doesn't hold USDC back for withdrawals, so a vault can still end up fully lent out.
 
 If a vault is fully utilized, you will need to wait for repayments to free up liquidity before withdrawing. The dashboard shows current available liquidity in real time.
 
 Secondary markets are also available in the event you can't wait for liquidity to return. Powered by KyberSwap Limit Orders.
 
 → [Sell your vsAERO\_USDC here](https://www.40acres.finance/exit/)
+
+To lend against sAERO on fixed terms, see [Fixed-fee vaults](/fixed-fee-vaults).

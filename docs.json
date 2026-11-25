@@ -29,33 +29,41 @@
               ]
             },
             {
-              "group": "Borrow",
+              "group": "Self-repaying",
               "pages": [
                 "borrowing",
                 "fee-structure",
-                "voting",
-                "assets"
-              ]
-            },
-            {
-              "group": "Earn",
-              "pages": [
+                "assets",
                 "lending",
                 "assets-1"
               ]
             },
             {
-              "group": "Automate",
+              "group": "Fixed fee",
               "pages": [
-                "relayera",
-                "merge"
+                "fixed-fee-loans",
+                "fixed-fee-vaults"
+              ]
+            },
+            {
+              "group": "Relay (No Debt Accounts)",
+              "pages": [
+                "relayera"
+              ]
+            },
+            {
+              "group": "Voting",
+              "pages": [
+                "voting",
+                "voting-venfts"
               ]
             },
             {
               "group": "Features",
               "pages": [
                 "portfolio-accounts",
-                "marketplace"
+                "marketplace",
+                "merge"
               ]
             },
             {
@@ -67,7 +75,6 @@
             {
               "group": "Resources",
               "pages": [
-                "tutorials",
                 "security",
                 "treasury",
                 "faq",
