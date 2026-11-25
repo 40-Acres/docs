@@ -3,33 +3,46 @@ title: "Fee Structure"
 icon: "dna"
 ---
 
-How fees and epoch rewards are distributed on 40 Acres.
+What a self-repaying loan costs, and where your rewards go.
 
-## Origination Fee
+There's no interest on a self-repaying loan. You pay an origination fee when you borrow, and a share of your rewards goes to lenders and the protocol. There's no fee for repaying early.
 
-A flat fee is charged when you open a credit line. This is a one-time cost applied at loan origination, and no penalties for early repayment.
+## Origination fee
 
-## Epoch Reward Split
+Each time you borrow, an origination fee is deducted from the USDC you receive. This applies to your first borrow and to every borrow after it. The app shows the fee before you confirm.
 
-Each epoch, rewards earned by your deposited asset are automatically split as follows:
+## Where your rewards go
 
-| Recipient | Share | Description |
-| --- | --- | --- |
-| Borrower (loan repayment) | 75% | Applied directly to your outstanding loan balance |
-| Lenders (vault yield) | 20% | Distributed proportionally to USDC vault depositors |
-| Protocol treasury | 5% | Supports ongoing development and operations |
+Each time your rewards are processed, they're split in this order:
 
-## Dynamic Fees (Coming Soon)
+1. **Protocol fee:** a share of your rewards goes to the 40 Acres treasury.
+2. **Lender premium:** a share goes to lenders in the USDC vault. On most markets this share depends on your loan-to-value. See [dynamic fees](#dynamic-fees).
+3. **Gas:** the gas cost of processing your rewards is paid back, up to 5% of your rewards.
+4. **Your reward strategy (optional):** if you've set one, up to 25% of your rewards can go to it instead of your loan. This only applies while your debt is within your borrowing limit. See [Portfolio Accounts](/portfolio-accounts#reward-strategies).
+5. **Your loan:** everything left repays your loan.
 
-The current flat 20% lender premium will transition to a **utilization-based dynamic fee model**. Under this system, the lender premium adjusts in real time based on vault utilization:
+If your rewards pay off your loan, whatever is left over is deposited into the lending vault in your name.
 
-- **Low utilization** → lower lender premium, borrowers keep more rewards
-- **High utilization** → higher lender premium, attracting new USDC deposits
+You can see how your rewards were split in the **Rewards** tab of your position.
 
-This creates a self-balancing vault. Capital is priced based on actual demand. When liquidity is stressed, the fee structure automatically incentivizes new deposits without any manual intervention.
+## Dynamic fees
 
-The flat fee model cannot produce this response. Dynamic fees replace static pricing with a market-driven mechanism that benefits both sides of the lending market.
+On Aerodrome, Hydrex and Velodrome, the lender premium depends on your own loan-to-value (LTV). That's your debt compared with the most you can borrow.
 
-## Zero Balance Fee
+- **Lower LTV:** a smaller share goes to lenders, so more of your rewards repay your loan.
+- **Higher LTV:** the share rises gently as your LTV rises.
+- **Well above your borrowing limit:** past a set point, the share rises more steeply, up to a cap.
 
-When a veNFT's loan balance reaches zero and the protocol claims the NFT on your behalf (a "zero balance claim"), a **premium** is applied. This compensates for the gas and infrastructure cost of the automated claim.
+Your fee depends on your own position, not on other borrowers or on how much of the vault is lent out. Each market has its own fee curve.
+
+To see what you'd pay, open the fee simulator from your borrow card. It shows your fee share now and after a borrow or repayment. Lenders can see the same curve under **What borrowers pay** on each vault page.
+
+## Pharaoh and Blackhole
+
+Pharaoh and Blackhole don't use the fee curve. Each has its own fixed split, which the app shows.
+
+Blackhole's vault is in recovery mode. Lenders and the protocol take no share, so all of a borrower's rewards repay their loan. See [Lending](/lending).
+
+## Accounts with no debt
+
+If an account has no debt, such as a paid-off borrower account or a [Relayer](/relayera) account, a share of its rewards goes to the 40 Acres treasury. Gas is paid back separately. The share depends on the account type, and the app shows it.

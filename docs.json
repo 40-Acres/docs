@@ -33,7 +33,6 @@
               "pages": [
                 "borrowing",
                 "fee-structure",
-                "voting",
                 "assets",
                 "lending",
                 "assets-1"
@@ -47,17 +46,24 @@
               ]
             },
             {
-              "group": "Automate",
+              "group": "Relay (No Debt Accounts)",
               "pages": [
-                "relayera",
-                "merge"
+                "relayera"
+              ]
+            },
+            {
+              "group": "Voting",
+              "pages": [
+                "voting",
+                "voting-venfts"
               ]
             },
             {
               "group": "Features",
               "pages": [
                 "portfolio-accounts",
-                "marketplace"
+                "marketplace",
+                "merge"
               ]
             },
             {
@@ -69,7 +75,6 @@
             {
               "group": "Resources",
               "pages": [
-                "tutorials",
                 "security",
                 "treasury",
                 "faq",

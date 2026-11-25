@@ -5,44 +5,39 @@ icon: "arrow-rotate-right"
 
 Automate your reward management with the 40 Acres Relayer.
 
-## What Is a Relayer?
+## What is a Relayer?
 
-A Relayer is an automation account that handles your weekly reward workflow without you having to touch anything. Every epoch, it claims your rewards, executes your chosen strategy, and keeps your position running.
+A Relayer account holds collateral with no loan against it. Several times a week, it claims that collateral's rewards and runs the strategy you choose, without you having to touch anything.
 
-The Relayer is completely separate from your Borrower Account. Your loan management and your reward strategy operate independently; one doesn't interfere with the other.
+A Relayer account is separate from your borrower account. Each account holds its own collateral and processes its own rewards. See [Portfolio Accounts](/portfolio-accounts).
 
-## Supported Assets
+## Supported assets
 
 | Chain | DEX | Asset |
 | :-- | :-- | :-- |
-| Base | Aerodrome | veAERO |
+| Base | Aerodrome | sAERO |
 | Optimism | Velodrome | veVELO |
 | Avalanche | Pharaoh | xPHAR |
 | Avalanche | Blackhole | veBLACK |
 
-## What a Relayer Can Do
+## What a Relayer can do
 
-**Reinvest / Compound**: Rewards are automatically converted and locked back into your collateral position. Your lock grows. Your credit line grows. Your borrowing power compounds over time.
+Split your rewards between up to four of these, with at least 20% each:
 
-**Convert to USDC**: Rewards are swapped to the asset of your choice (USDC or otherwise) and sent directly to your wallet each epoch.
+- **Your collateral:** lock rewards back into it. Your position grows, and so do its rewards.
+- **A wallet:** swap rewards into USDC or another supported token and send them to any address, including your own.
+- **The lending vault:** deposit rewards into the 40 Acres lending vault for that asset.
+- **Another loan:** repay a loan in another of your 40 Acres accounts on the same chain.
 
-**Custom Strategy**: Split rewards however you want. Route a portion toward repayment, compound another portion, and take the remainder as USDC. Set the rules once and the Relayer executes them every epoch.
+See [reward strategies](/portfolio-accounts#reward-strategies).
 
-**Cross-Chain Repayment**: Rewards earned on one chain can be routed to repay loans on another. Rewards from Velodrome on Optimism can repay a veAERO loan on Base. 40 Acres handles the bridging.
+## Relayer fee
 
-## Relayer Fee
+40 Acres takes a share of a Relayer account's rewards as a protocol fee. The gas cost of processing your rewards is also paid back, up to 5% of your rewards. The app shows the current fee. See [fee structure](/fee-structure#accounts-with-no-debt).
 
-Relayer operators charge a fee on rewards processed. This fee compensates the infrastructure that executes your automation on-chain each epoch.
+## Setting up a Relayer
 
-## Setting Up a Relayer
-
-1. Navigate to the Automate section of the dashboard
-2. Create or connect a Relayer Account
-3. Select your reward strategy (compound, USDC, custom split)
-4. Confirm setup - the Relayer begins operating at the next epoch
-
-## Custom Relayers
-
-Advanced users can deploy a Custom Relayer contract to implement proprietary reward routing logic. Custom Relayers interact with the 40 Acres reward distribution system via a standard interface.
-
-→ [Tutorial: How to deposit to relayer](/tutorials)
+1. Go to the **Borrow** dashboard at [app.40acres.finance](https://app.40acres.finance) and choose **Relayer**.
+2. Deposit your collateral into a Relayer account.
+3. Choose your reward strategy.
+4. Confirm. Your rewards follow the strategy from the next time they're processed.

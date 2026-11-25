@@ -3,66 +3,67 @@ title: "Portfolio Accounts"
 icon: "passport"
 ---
 
-The next generation of borrowing on 40 Acres: multi-asset, cross-chain, fully automated.
+Your collateral, debt and reward settings live in Portfolio Accounts.
 
-# Portfolio Accounts
+## What a Portfolio Account is
 
-<Info>
-  Portfolio Accounts are coming in Q2 2026. All existing users will be automatically migrated. Beta testing has already started.
-</Info>
+A Portfolio Account is an on-chain account that 40 Acres creates for you. It holds your collateral, tracks your debt, and processes your rewards. You own it.
 
-## Borrow More. Do More. Worry Less.
+Each kind of account does one job. Your account has the same address on every chain 40 Acres runs on.
 
-Today, borrowing on 40 Acres means depositing one revenue-generating asset, taking a loan, and letting rewards repay it. Portfolio Accounts remove that ceiling.
+There are four kinds of account:
 
-Your loan is issued against the **total collateral held in your Portfolio Account** - every revenue generating asset, every relayer position, every collateral type you've added means more borrowing power; and it all lives in one place.
-
-## Two Accounts. Two Jobs.
-
-Portfolio Accounts introduce a clean separation between your two roles on 40 Acres.
-
-### Borrower Account
-
-Your Borrower Account manages everything related to your loan:
-
-- Holds all your collateral (veNFTs, ERC4626 tokens, revenue-generating assets)
-- Tracks your total debt across positions
-- Processes repayments automatically each epoch
-- Gives you full control over your repayment strategy; merge locks, increase lock size, top-up, vote optimization or manual vote.
-
-### Relayer Account
-
-Your Relayer Account handles reward automation separately:
-
-- Claims weekly rewards across all collateral in your Borrower Account
-- Executes your chosen reward strategy (compound, convert, custom)
-- Operates independently so your loan and reward strategy never interfere
-
-You can have multiple Borrower and Relayer Accounts depending on which vault you're borrowing from.
-
-## What You Can Do with Portfolio Accounts
-
-**Bootstrap Borrowing**: Purchase a revenue generating asset with borrowed funds and immediately post it as collateral in the same transaction. Your credit and your collateral grow together, in one click.
-
-**Stack positions without chaos**: Run multiple Portfolio Accounts simultaneously, each with its own strategy. An aggressive compounder and a cash-flow account, side by side.
-
-**Unlock collateral you couldn't use before**: veNFTs, ERC4626 tokens, ERC20 yield-bearing assets, and eventually LP positions. If it generates revenue, it can back a loan.
-
-**Go cross-chain without thinking about it**: Rewards earned on Optimism repay loans on Base. 40 Acres handles the bridging. You just see a smaller balance.
-
-## Custom Reward Strategies
-
-Choose how your rewards are deployed each epoch:
-
-| Strategy | What It Does |
+| Account | What it does |
 | --- | --- |
-| **Compound** | Rewards lock back into more collateral, growing your credit line continuously |
-| **Cash out** | Rewards convert to your asset of choice and land in your wallet |
-| **Cross-chain repay** | Rewards from any chain repay debt on any other chain |
-| **Custom split** | Set your own percentages; any combination of the above |
+| **Borrower account** | Holds collateral that backs a [self-repaying loan](/borrowing). Rewards repay your debt. |
+| **Relayer account** | Holds collateral with no loan. Rewards follow the strategy you choose. See [Relayer](/relayera). |
+| **Fixed-fee account** | Holds the sAERO that backs a fixed-term loan, one sAERO per loan. It's separate from your borrower account. See [Fixed-fee loans](/fixed-fee-loans). |
+| **Smart Wallet** | A central place for idle tokens and for things you buy through 40 Acres, such as a veNFT bought on the [Marketplace](/marketplace). You can move them into your borrower or Relayer account, and withdraw from there. |
 
-Set it once. The Relayer executes it every epoch.
+## How accounts are organized
 
-## Migration
+You get one borrower account and one Relayer account per market, one fixed-fee account, and one Smart Wallet per chain. For example, you can have an Aerodrome borrower account, an Aerodrome Relayer account and a Hydrex borrower account side by side. You can't have two Aerodrome borrower accounts.
 
-When Portfolio Accounts launch, all existing users will be able to migrate on their own time. Active loans, collateral, and positions will carry over seamlessly if they choose to do so. New users will automatically be opted in. No action required.
+Debt belongs to one account. Your borrowing limit counts all the collateral in that account, but debt in one account isn't covered by collateral in another.
+
+## How changes are checked
+
+You manage every account through the 40 Acres Portfolio Manager. It has the same address on every chain: [`0x40ac2e40acb7bdd6ec83e468143262fe216529ec`](https://basescan.org/address/0x40ac2e40acb7bdd6ec83e468143262fe216529ec).
+
+Each change you make runs as a single transaction. At the end, the Portfolio Manager checks that your account is still in a valid state, for example that your collateral still covers your debt. If it isn't, the whole transaction is cancelled.
+
+## What you can hold
+
+- **sAERO** on Aerodrome. Each sAERO is tracked separately, and your borrowing limit counts all of them.
+- **veNFTs** on the other supported markets.
+
+See [Collateral](/assets) for the full list. Other yield-bearing assets, such as ERC-4626 tokens and LP positions, are on the roadmap.
+
+## Managing your account
+
+Each account has its own settings. Open them from **Reward strategy** on the account's card.
+
+- **Reward strategy:** choose where your rewards go. See [reward strategies](#reward-strategies).
+- **Voting:** let the [vote optimizer](/voting) vote for you, or vote manually.
+- **Auto Top-Up:** if it's available on your market, 40 Acres automatically borrows any new room under your limit and sends it to you.
+
+Rewards are claimed several times a week. The **Rewards** tab shows what happened to them: what you earned, the fees and costs, and how much repaid your loan, was reinvested, or was paid to you.
+
+## Reward strategies
+
+Your rewards can go to:
+
+- **Your collateral:** lock rewards back into it. Each piece of collateral is topped up from its own rewards.
+- **A wallet:** swap rewards into a token you choose and send them to any address, including your own.
+- **The lending vault:** deposit rewards into the 40 Acres lending vault for that asset.
+- **Another loan:** repay a loan in another of your 40 Acres accounts on the same chain.
+
+### Borrower accounts
+
+By default, all of your rewards (after fees and gas) repay your loan. You can send up to 25% of them to one other destination instead. That only applies while your debt is within your borrowing limit.
+
+You can also choose what happens once your loan is paid off. That setup starts when you owe nothing.
+
+### Relayer accounts
+
+A Relayer account has no loan, so all of its rewards follow your strategy. You can split them between up to four destinations, with at least 20% each. Quick options include sending everything to your wallet, to the vault or to your collateral, or splitting it half and half between your collateral and your wallet.

@@ -1,35 +1,48 @@
 ---
-title: "Voting"
+title: "Voting with sAERO"
+sidebarTitle: "sAERO"
 icon: "mailbox-flag-up"
 ---
 
-How 40 Acres votes with your collateral to maximize epoch rewards.
+How your sAERO votes on Aerodrome to earn rewards.
 
-## The Vote Optimizer
+Your sAERO earns rewards by voting for pools. By default, the 40 Acres vote optimizer votes for you and puts your voting power on the pools it expects to earn the most. More rewards means faster loan repayment. You can also vote yourself.
 
-When you deposit an asset into 40 Acres, the protocol's vote optimizer automatically allocates your voting power each epoch to maximize the rewards your position generates.
+<Note>
+  Voting works differently for Hydrex, Pharaoh and Blackhole. See [Voting with veNFTs](/voting-venfts).
+</Note>
 
-The optimizer analyzes expected returns across all supported pools and routes your votes to the highest-yielding opportunities. More rewards → faster loan repayment → sooner you get your collateral back.
+## How it works
 
-You don't have to do anything. Votes are placed automatically before each epoch deadline.
+- **Votes stay in place.** There are no epochs. Your votes stay where they are until you or the vote optimizer change them.
+- **Rewards build up continuously.** They're claimed regularly. If your account has debt, they're applied to your loan once a week.
+- **You can vote for almost any Aerodrome pool.** There's no list of approved pools. Pools that contain a blocked token can't receive votes, and the app only lets you pick pools your sAERO can vote for.
+- **There's a cooldown between vote changes.** Aerodrome sets it, and 40 Acres can't shorten it. The app shows when you can vote next. Votes by the vote optimizer restart the cooldown too. The cooldown never stops you withdrawing your sAERO.
 
-## Manual Voting
+## Auto or manual
 
-If you prefer to control where your voting power goes, you can vote manually through the 40 Acres Voting Terminal. Requirements:
+You choose auto or manual voting for each sAERO separately.
 
-- You must vote on pools that 40 Acres supports
-- Votes must be placed before the epoch deadline
-- Rewards still flow through the protocol for repayment - manual voting does not change the reward split
+- **Auto:** the vote optimizer votes for you.
+- **Manual:** when you vote yourself, that sAERO switches to manual for a week. The vote optimizer won't change your votes during that week. If you don't vote again, it can start voting for you after the week ends. Your votes stay in place until someone changes them.
 
-Manual voting is available for users who have a specific voting strategy or want to direct emissions to particular pools.
+You can switch back to auto at any time.
 
-## The Voting Terminal
+## Other chains
 
-The Voting Terminal is 40 Acres' interface for managing votes, exploring pool yields, bribes, and tracking your epoch performance. You can:
+Part of your sAERO's voting power can be used on Aerodrome pools on other chains. Rewards earned there are brought back to Base. You can return that voting power to Base from the **Vote** tab.
 
-- View current pool bribe rates and expected returns
-- Set auto-vote preferences
-- Override votes manually for a specific epoch
-- Track your historical voting performance
+## Cost
 
-→ Access the Voting Terminal at [40acres.finance](https://40acres.finance)
+A vote on Base costs only gas. Moving voting power to or from another chain, or voting there, also needs a cross-chain fee paid in ETH on Base. The app shows the fee before you confirm, and any unused part is refunded.
+
+sAERO in a [fixed-fee account](/fixed-fee-loans) votes on Base only.
+
+## The Vote tab
+
+Manage your votes from the **Vote** tab at [app.40acres.finance](https://app.40acres.finance). You can:
+
+- See pool rewards and incentives.
+- Choose auto or manual voting for each sAERO.
+- Vote for the pools you choose, on Base or other chains.
+- See when you can change your votes next.
