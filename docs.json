@@ -29,19 +29,21 @@
               ]
             },
             {
-              "group": "Borrow",
+              "group": "Self-repaying",
               "pages": [
                 "borrowing",
                 "fee-structure",
                 "voting",
-                "assets"
+                "assets",
+                "lending",
+                "assets-1"
               ]
             },
             {
-              "group": "Earn",
+              "group": "Fixed fee",
               "pages": [
-                "lending",
-                "assets-1"
+                "fixed-fee-loans",
+                "fixed-fee-vaults"
               ]
             },
             {

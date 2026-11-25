@@ -1,0 +1,136 @@
+---
+title: "Fixed-fee loans"
+sidebarTitle: "Borrowing"
+icon: "calendar-check"
+---
+
+Borrow USDC against sAERO for a set term, for one fee you see before you borrow.
+
+## How it works
+
+Fixed-fee loans run on [ACE](https://ace.credit). A fixed-fee loan has an end date and one fee. You pick a term, and the fee comes out of the USDC you receive. Nothing builds up after that. You owe the amount you borrowed, and you repay, extend or refinance it before the term ends.
+
+Unlike a [self-repaying loan](/borrowing), a fixed-fee loan can lose its collateral. That happens if AERO's price stays below your loan's trigger price, or if the term ends before you repay.
+
+## Fixed-fee or self-repaying?
+
+| | Fixed fee | [Self-repaying](/borrowing) |
+| --- | --- | --- |
+| **Length** | A set term, then repay, extend or refinance | No end date |
+| **Cost** | One fee, taken out of your USDC upfront | A share of weekly rewards. See [fee structure](/fee-structure) |
+| **Repayment** | You repay by the end of the term. Rewards help | Rewards repay it |
+| **If AERO falls** | You can lose your sAERO | Never liquidated |
+| **Max loan** | A share of your sAERO's value | Based on rewards. See [how it works](/how-it-works) |
+
+## The fee
+
+You pay one fee, charged once on the amount you borrow. A longer term costs more. There's no interest and no ongoing rate.
+
+The fee comes out of the USDC you receive. For example, if you borrow 1,000 USDC and your fee is 10 USDC, you receive 990 USDC and owe 1,000 USDC.
+
+Most of the fee goes to [lenders](/fixed-fee-vaults). Fees for new loans can change. The app always shows your exact fee before you confirm.
+
+## Before you start
+
+- **You need sAERO.** sAERO is staked AERO on Aerodrome, and 1 sAERO is backed by 1 AERO. You can also make a new sAERO from AERO.
+- **Your sAERO must meet the minimum size shown in the app.** When you add an sAERO, it becomes a permanent stake if it isn't one already.
+- **Each loan uses one whole sAERO.** You can't add more sAERO to a loan once it's open.
+- **Loans are on Base only.**
+
+<Info>
+  During the beta, loan sizes are capped. The app shows the current limits.
+</Info>
+
+### Using sAERO from a self-repaying loan
+
+Fixed-fee loans have their own account, separate from your self-repaying loans. One sAERO can't back both. To move one over:
+
+1. Withdraw the sAERO to your wallet. You may need to repay part of your self-repaying loan first.
+2. Add it for a fixed-fee loan.
+
+## Borrow
+
+<Steps>
+  <Step title="Choose an sAERO">
+    Go to [fixed.40acres.finance](https://fixed.40acres.finance), click **Choose an sAERO** and pick the sAERO you want to borrow against. The first time, you approve 40 Acres to hold your sAERO.
+  </Step>
+  <Step title="Enter an amount and a term">
+    You can borrow up to the maximum shown in the app. Your sAERO is valued at the AERO price from Chainlink's AERO/USD feed. Before you confirm, the app shows your fee, the USDC you'll receive, and your trigger price.
+  </Step>
+  <Step title="Click Borrow">
+    Confirm the transaction. The USDC, minus the fee, arrives in your wallet.
+  </Step>
+</Steps>
+
+## While your loan is open
+
+Your sAERO keeps earning rewards. 40 Acres takes a fee plus gas costs. Depending on your reward settings, the rest can go toward your loan, either to pay down your debt or to cover your next extension fee. If you send your rewards somewhere else, they don't help your loan.
+
+Rewards aren't guaranteed to cover your fee, or the loan. Plan to repay the loan yourself.
+
+## Repay early
+
+Click **Repay** to pay off part or all of the loan at any time.
+
+If you repay **in full** before the term ends, part of the fee comes back for the time you didn't use. Claim it from your loan after you repay. Partial repayments don't return any fee.
+
+A partial repayment can't leave a tiny balance. If it would, repay in full instead.
+
+Once the loan is repaid in full, you can withdraw your sAERO to your wallet.
+
+## End of the term
+
+<Warning>
+  There's no grace period. Once your term ends, you can't extend or refinance, and your sAERO can be taken. Repay, extend or refinance **before** the end date.
+</Warning>
+
+Before the term ends, choose one:
+
+- **Repay** the rest and get your sAERO back.
+- **Extend** the loan by another term. You pay a new fee, but only for the extra days.
+- **Refinance** into a new loan at the current loan settings. Your old loan closes and the new one opens in one step.
+
+### Extend or refinance?
+
+| | Extend | Refinance |
+| --- | --- | --- |
+| **Fee** | Only for the extra days | A full new fee, on the whole new amount, for the whole new term |
+| **Your old fee** | Nothing comes back | The unused part counts toward the new loan, as with an [early repayment](#repay-early) |
+| **Paid from** | Rewards your loan has collected first, then your wallet | The new loan. Any extra comes to you |
+| **Loan amount** | Stays the same | Can go up. To lower it, repay part first |
+| **Loan settings** | Must be the same as when you borrowed | Moves you to the current settings |
+
+The first time you pay an extension fee from your wallet, you approve USDC.
+
+You can't add USDC during a refinance, and a refinance charges a full new fee. So refinancing for the same amount usually doesn't work. Borrow a little more, or repay part of the loan first. The new amount must also fit today's maximum loan and the beta limits.
+
+An extension or a refinance can be refused if:
+
+- 40 Acres has paused new lending.
+- The AERO price feed is out of date, or Base has just restarted.
+- Lenders are waiting to withdraw, and the vault's spare USDC doesn't cover all of them.
+
+An extension can also be refused if your loan no longer qualifies at today's AERO price, or if the loan settings have changed since you borrowed. In that case, refinance or repay instead. A refinance can also be refused if the vault doesn't have enough spare USDC to cover the whole new loan.
+
+Extend early, so you still have time to refinance or repay if it's refused.
+
+## If the price falls
+
+Your loan has a trigger price. You see it before you borrow and on your loan afterwards. Repaying part of the loan lowers it.
+
+If AERO stays below your trigger price for a set period, measured in minutes, your loan can be settled. Every price update in that period has to be below the trigger. One update at or above it starts the period again.
+
+There's no extra window to fix the loan after that. Anyone can settle it, and 40 Acres does so as soon as it can. To protect your sAERO, repay part of the loan before AERO reaches your trigger price.
+
+## If your sAERO is taken
+
+When a loan is settled, at the trigger or after the term ends, your sAERO moves to the lenders. Its rewards go to the lenders from then on, including any you hadn't claimed yet.
+
+40 Acres lists the sAERO for sale on the 40 Acres marketplace and sets the price. When it sells, the money is paid out in this order:
+
+1. The marketplace fee.
+2. Your debt, to the lenders.
+3. A fee on top of your debt, to the lenders.
+4. Anything left, to you. Claim it from your loan.
+
+You keep the USDC you borrowed. If the sale brings in less than your debt, you don't owe anything more.

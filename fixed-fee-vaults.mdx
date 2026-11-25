@@ -1,0 +1,73 @@
+---
+title: "Fixed-fee vaults"
+sidebarTitle: "Lending"
+icon: "vault"
+---
+
+Deposit USDC and earn the fees borrowers pay on fixed-fee loans.
+
+## How it works
+
+The fixed-fee vault runs on [ACE](https://ace.credit). It lends USDC to borrowers who put up sAERO as collateral. Each loan has a set term and one fee, paid upfront. Those fees are your yield.
+
+If a borrower doesn't repay, the vault doesn't get its USDC back right away. The borrower's sAERO is sold instead, and the vault is paid from the sale.
+
+## Fixed-fee vault or USDC vaults?
+
+| | Fixed-fee vault | [USDC vaults](/lending) |
+| --- | --- | --- |
+| **Yield comes from** | Fees on [fixed-fee loans](/fixed-fee-loans) | Borrowers' weekly rewards |
+| **Vaults** | One, for sAERO | One per supported DEX |
+| **If a loan goes bad** | The sAERO is sold. Any shortfall is a loss to the vault | Repayment takes longer |
+
+## Deposit
+
+1. Open the [sAERO vault](https://fixed.40acres.finance/earn/saero) on Base.
+2. Enter your USDC amount and click **Deposit**. The first time, you approve USDC.
+3. You receive vault shares (40A-TERM-SAERO-USDC). The vault is ERC-4626.
+
+The vault page shows an estimate of what you might earn in a year. It's an estimate, not a promise.
+
+<Info>
+  During the beta, the vault's total size is capped. The app shows the current limit.
+</Info>
+
+## How you earn
+
+The vault earns a fee for every day a loan runs.
+
+The lenders' fee reaches the vault in two halves:
+
+- **Half when the loan opens.**
+- **Half when the loan ends or changes**, for example when it's repaid, extended, refinanced or settled.
+
+If a borrower repays in full early, the vault keeps the first half and the used part of the second half. The unused part goes back to the borrower. If a loan is settled, the vault keeps the whole fee.
+
+New earnings show up in the share price gradually. You only earn on USDC that's lent out. Lenders don't get a share of sAERO rewards while loans are open.
+
+## What happens to your USDC
+
+- **A loan is repaid.** The USDC comes back to the vault.
+- **A loan isn't repaid.** This happens when AERO stays below the loan's trigger price, or when the term ends unpaid. The sAERO is taken and listed for sale on the 40 Acres marketplace. When it sells, the marketplace fee comes out first. Then the vault gets the debt back, plus a fee on top of the debt. Anything left goes to the borrower.
+
+<Warning>
+  When a loan isn't repaid, the share price drops by the full debt right away. It comes back gradually after the sAERO sells. If you withdraw before then, you leave at the lower price.
+
+  If the sAERO sells for less than the debt, everyone in the vault shares the loss. While the sAERO is waiting to sell, new deposits are usually paused. Its rewards go to the vault, after 40 Acres' fee plus gas.
+</Warning>
+
+## Withdraw
+
+Click **Withdraw** to take out spare USDC. That's USDC that isn't lent out or held for other lenders' exit requests. There's no withdrawal fee and no cooldown.
+
+If there isn't enough spare USDC, request an exit instead:
+
+- As loans are repaid and USDC comes back, you can claim your exit, first come, first served. It isn't paid out automatically.
+- You get the share price when you claim, not when you ask.
+- A request expires unless you renew it. You can cancel it at any time.
+
+While requests are waiting, new loans can only use spare USDC that isn't held for them. No loan can be extended until the spare USDC covers every waiting request.
+
+## Fees
+
+40 Acres curates the vault and takes a performance fee on growth in share value. It only applies above the vault's previous high. There are no deposit or withdrawal fees.
